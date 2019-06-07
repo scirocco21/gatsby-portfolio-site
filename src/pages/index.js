@@ -1,16 +1,17 @@
-import React from "react"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import React from "react";
+import Layout from "../components/layout";
+import BackgroundSection from '../components/backgroundImageSection';
+import SEO from "../components/seo";
 
 const IndexPage = () => (
   <Layout>
- 
-      <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-  
+    <SEO title="Home" />
+    <div style={{position: 'relative', zIndex: 1}}>
+      <BackgroundSection/>
+      <div style={{color:'black', fontSize: 48, fontWeight: 'bold', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+         Hi people
+      </div>
+    </div>
   </Layout>
 )
 
