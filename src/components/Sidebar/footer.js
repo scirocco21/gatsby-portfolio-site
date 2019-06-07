@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
     const socialLinksMarkup = socialLinks.map(
       link => {
         return <li key={link.id}>
-          <a href={link.url} target='_blank'>
+          <a href={link.url} target='_blank' rel='noopener noreferrer'>
             <FontAwesomeIcon icon={['fab', link.id]} style={{color: 'black', fontSize: '18px'}}/>
           </a>
         </li>
