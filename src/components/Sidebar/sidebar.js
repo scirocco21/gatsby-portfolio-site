@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Footer from './footer'
-import config from '../../config';
+// import Footer from './footer'
+// import config from '../../config';
 
 const pages = [
   {
@@ -38,7 +38,7 @@ export default class Sidebar extends React.Component {
     const pagesList = pages.map((page) => {
       return (
         <li key={page.id}>
-            <Link to={`../${page.id}`} className="nav-item">
+            <Link to={`../${page.id}`} className="nav-item btn-1 draw">
               <FontAwesomeIcon icon={page.icon}/>
               {page.title}
             </Link>
@@ -46,13 +46,16 @@ export default class Sidebar extends React.Component {
       )
     })
     return(
-      <aside style={{flex: 1, height: '100%', display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '160px', maxWidth: '200px'}}>
+      <aside style={{ flex: 1, height: '100%', display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '200px', maxWidth: '220px'}}>
+        <header style={{padding: 25}}>
+          <h4>SEBASTIAN GERTZ</h4>
+        </header>
         <nav style={{flex: 5}}>
           <ul className="nav-list">
           {pagesList}
           </ul>
         </nav>
-       <Footer socialLinks={config.socialLinks}></Footer>
+       {/* <Footer socialLinks={config.socialLinks}></Footer> */}
       </aside>
     )
   }
