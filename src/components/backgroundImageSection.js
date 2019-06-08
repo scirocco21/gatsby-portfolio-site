@@ -25,15 +25,16 @@ const BackgroundSection = ({ className, children }) => (
             fluid={imageData}
             style={{  
               width: '100%', 
-              height: '100vh',
+              minHeight: '100vh',
               backgroundPosition: 'bottom center',
               backgroundRepeat: 'repeat-y',
               backgroundSize: 'cover',
-              position: 'absolute',
               zIndex: -1,
-              opacity: .6
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
             }}
-          />
+          >{children}</BackgroundImage>
        )
       }
      }
