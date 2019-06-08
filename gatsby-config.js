@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    // make local filesystem available to graphql queries
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,6 +15,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    // image handling
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -30,6 +32,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`
   ],
 }
