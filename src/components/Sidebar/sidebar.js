@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import Footer from './footer'
-// import config from '../../config';
 
 const pages = [
   {
@@ -21,7 +19,7 @@ const pages = [
     icon: "pencil-alt"
   },
   {
-    title: "About Me",
+    title: "About",
     id: "about",
     icon: "user"
   },
@@ -38,24 +36,26 @@ export default class Sidebar extends React.Component {
     const pagesList = pages.map((page) => {
       return (
         <li key={page.id}>
-            <Link to={`../${page.id}`} className="nav-item btn-1 draw">
+            <Link to={`../${page.id}`} className="nav-item">
               <FontAwesomeIcon icon={page.icon}/>
-              {page.title}
+              <span>{page.title}</span>
             </Link>
         </li>
       )
     })
     return(
-      <aside style={{ flex: 1, height: '100%', display: 'flex', flexDirection: 'column', minHeight: '100vh', minWidth: '200px', maxWidth: '220px'}}>
-        <header style={{padding: 25}}>
-          <h4>SEBASTIAN GERTZ</h4>
+      <aside style={{ flex: 1, height: '100%', display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems:'center'}}>
+        <header style={{padding: '15px'}}>
+          <h4 style={{margin: '0 auto'}}>
+            <span id="first-name">SEBASTIAN </span>
+            <span id="last-name">GERTZ</span>
+          </h4>
         </header>
         <nav style={{flex: 5}}>
           <ul className="nav-list">
           {pagesList}
           </ul>
         </nav>
-       {/* <Footer socialLinks={config.socialLinks}></Footer> */}
       </aside>
     )
   }
