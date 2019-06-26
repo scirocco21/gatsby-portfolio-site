@@ -1,0 +1,80 @@
+// nav bar items
+
+nav {
+  margin: 15px;
+  .nav-list {
+    list-style-type: none;
+    font-size: 18px;
+    padding: 0;
+    li {
+      margin-top: 20px;
+      .nav-item {
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+        color: '#240447';
+        }
+        .nav-item:visited {
+          color: '#240447';
+        }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 803px) {
+  aside {
+    header {
+      h4 {
+        span#first-name {
+          writing-mode: vertical-lr;
+          text-orientation: upright;
+        }
+        span#last-name {
+          writing-mode: vertical-lr;
+          text-orientation: upright;
+          vertical-align: top;
+        }
+      }
+    }
+    nav {
+      ul {
+        li {
+          a.nav-item {
+            font-size: 14px;
+            margin-right: 5;
+          
+           svg {
+             margin-right: 5;
+           }
+          }
+        }
+      }
+    }
+  }
+
+
+}
+  @media only screen and (max-width: 680px) {
+    aside {
+      header {
+        h4 {
+          // writing-mode: vertical-rl
+        }
+      }
+      nav {
+        ul.nav-list {
+          li {
+            a.nav-item {
+             span {
+              display: none
+             }
+             svg {
+              margin: 0 auto;
+             }
+            }
+          }
+        }
+      }
+    }
+  }
