@@ -1,5 +1,28 @@
 @import 'base_styles';
 
+#circle {
+  background-color: rgba(255,255,255, 0.7);
+  color: #240447;
+  margin-top: 15;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 20px 20px 20px;
+  border-radius: 50%;
+}
+
+#text-container-main {
+  font-size: 3.25vw;
+  padding: 35px;
+  font-family: monospace;
+}
+
+#intro-text-main {
+  font-size: 4.75vw;
+}
+
+
 // ============================================
 // POINTING FINGER
 // ============================================
@@ -9,6 +32,9 @@
   -webkit-animation: backandforth 1s ease 5;
   animation: backandforth 1s ease 5;
   animation-delay: 4.5s;
+  text-shadow: 10px 10px 10px;
+  padding-left: 25px;
+  padding-right: 10px;
 }
 @-webkit-keyframes backandforth {0%{left:0;} 50%{left:50%;} 100%{left:0;}}
 @keyframes backandforth {0%{left:0;} 50%{left:2.5%;} 100%{left:0;}}
@@ -20,10 +46,12 @@
 
 
 #highFive {
-animation: highFiveMe 0.6s 6 alternate;
-animation-delay: 2.5s;
--webkit-animation: highFiveMe 0.6s 6 alternate;
-position: absolute;
+  animation: highFiveMe 0.6s 6 alternate;
+  animation-delay: 3.2s;
+  -webkit-animation: highFiveMe 0.6s 6 alternate;
+  position: absolute;
+  text-shadow: 10px 10px 10px;
+  padding-left: 15px;
 }
 @keyframes highFiveMe {
 0% {
@@ -130,4 +158,75 @@ position: absolute;
   100% {
     opacity: 1;
   }
+}
+
+
+@media only screen and (max-width: 1320px) {
+  div#circle {
+    width: 900px;
+    height: 900px;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  div#circle {
+    width: 780px;
+    height: 780px;
+
+    #text-container-main {
+      font-size: 3vw;
+      #intro-text-main {
+        font-size: 5vw;
+      }
+    }
+  } 
+}
+
+@media only screen and (max-width: 1040px) {
+  div#circle {
+    width: 680px;
+    height: 680px;
+  } 
+}
+
+@media only screen and (max-width: 900px) {
+  div#circle {
+    width: 540px;
+    height: 540px;
+  } 
+}
+
+@media only screen and (max-width: 760px) {
+  div#circle {
+    width: 446px;
+    height: 460px;
+  } 
+}
+
+@media only screen and (max-width: 620px) {
+  div#circle {
+    width: 360px;
+    height: 360px;
+  } 
+}
+
+@media only screen and (max-width: 480px) {
+  div#circle {
+    width: 320px;
+    height: 320px;
+  } 
+}
+
+@media only screen and (max-width: 360px) {
+  div#circle {
+    width: 240px;
+    height: 240px;
+    
+    #text-container-main {
+      font-size: 3.5vw;
+      #intro-text-main {
+        font-size: 5vw;
+      }
+    }
+  } 
 }
