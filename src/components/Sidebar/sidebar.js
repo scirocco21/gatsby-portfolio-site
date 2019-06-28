@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from "gatsby"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from "gatsby";
+import MenuButton from '../menuButton.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const pages = [
   {
-    title: "Home",
-    id: "index",
+    title: "Index",
+    id: "/",
     icon: 'home'
   }, 
   {
@@ -31,12 +32,22 @@ const pages = [
 ]
 
 export default class Sidebar extends React.Component {
-  
+  state = {
+    isExpanded: false
+  }
+
+  expandMenu = () => {
+    this.setState({
+      isExpanded: !this.state.isExpanded
+    })
+  }
+
   render() {
+    const expandedClass = this.state.isExpanded ? 'show' : 'hidden';
     const pagesList = pages.map((page) => {
       return (
         <li key={page.id}>
-            <Link to={`../${page.id}`} className="nav-item">
+            <Link to={`/${page.id}`} className="nav-item">
               <FontAwesomeIcon icon={page.icon}/>
               <span>{page.title}</span>
             </Link>
@@ -44,7 +55,7 @@ export default class Sidebar extends React.Component {
       )
     })
     return(
-      <aside style={{ flex: 1, height: '100%', display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems:'center'}}>
+      <aside className={expandedClass}>
         <header style={{padding: '15px'}}>
           <h4 style={{margin: '0 auto'}}>
             <span id="first-name">SEBASTIAN </span>
@@ -54,6 +65,9 @@ export default class Sidebar extends React.Component {
         <nav style={{flex: 5}}>
           <ul className="nav-list">
           {pagesList}
+          <li>
+            <MenuButton expandMenu={this.expandMenu}/>
+          </li>
           </ul>
         </nav>
       </aside>
