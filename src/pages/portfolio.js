@@ -9,7 +9,8 @@ import biblio from '../images/biblio.jpg';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { graphql, StaticQuery } from 'gatsby'
 import Img from "gatsby-image"
-
+ß
+// TODO: turn all <img/> tags into Gatsby <Img> comps
 
 const Portfolio = () => (
   <Layout>
