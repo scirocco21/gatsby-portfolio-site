@@ -10,10 +10,10 @@ const Index = () => (
     <SEO title="Home" />
     <div style={{position: 'relative', zIndex: 1}}>
       <BackgroundSection>
-        <div id="circle" className="roll-in-blurred-left">
+        <div id="overlay-main" className="fade-in">
           <div id="text-container-main">
             <h1 id="intro-text-main"><span>Hi, I'm</span><br></br>
-              <mark style={{backgroundColor: '#EE015D', color: '#240447'}} className="tracking-in-expand">Sebastian</mark></h1>
+              <mark style={{backgroundColor: '#EE015D', color: '#240447', padding: '0 5px 0 5px'}} className="tracking-in-expand">Sebastian</mark></h1>
             <h3>I'm a web developer living in NYC. </h3>
             <h3>Glad you found me! <span id="highFive">🙌</span></h3>
             <h3><span id="pointer">👈</span> Check out my projects and posts</h3>
