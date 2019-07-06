@@ -5,10 +5,17 @@
 // color scheme:
 $turqois: #02E1E4;
 $yellow: #F4C402;
-$red: #EE015D;
-$background: #240447;
+$red: #ED5F7B;
+$dark: #171717;
 
 // fonts
 $primary: 'Roboto', sans-serif;
 $secondary: 'Montserrat', sans-serif;
-$headings: 'Playfair Display', serif;
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $primary;
+}
+
+p {
+  font-family: $secondary;
+}
