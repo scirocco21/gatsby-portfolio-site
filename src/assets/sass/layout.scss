@@ -2,14 +2,42 @@
 @import 'sidebar';
 
 html {
-  font-family: $primary;
+  // font-family: $primary;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-size: 100%;
+
+  @media (min-height: 480px) {
+    font-size: 80%;
+  }
+
+  @media (min-height: 620px) {
+    font-size: 95%;
+  }
+
+  @media (min-height: 760px) {
+    font-size: 105%;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 125%;
+  }
+
+  @media (min-width: 1020px) and (min-height: 780px) {
+    font-size: 170%;
+  }
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.menu-button {
+  // visibility:hidden;
+  position:absolute;
+  top:0;
+  right:0;
 }
 
 // main content container
@@ -20,7 +48,6 @@ body {
   text-align: center;
   min-height: 100vh;
 }
-
 
 // // Main footer
 .footer-wrapper {
@@ -48,6 +75,12 @@ body {
   } 
 }
 
-.layout-footer {
-  background-color: #471D75;
+.footer-wrapper {
+  background-color: #f9ebff;
+}
+
+@media only screen and (max-width: 660px) {
+  #main-container {
+    flex-direction: column;
+  }
 }
