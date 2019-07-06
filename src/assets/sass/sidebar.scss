@@ -1,124 +1,140 @@
-// nav bar items
+// ===========
+// BASE STYLES
+// ===========
 aside {
   flex: 1;
-  min-height: 100vh;
-  min-width: 65px;
+  min-width: 195px;
   height: 100vh;
-  font-size: 2vw;
+  max-height: 100vh;
+  color: $red;
   display: flex;
   align-items: center;
   flex-direction: column;
- 
-  nav {
-    padding: 20px;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #3A2A46;
+  z-index: 10;
 
+  header {
+    flex: 2
+  }
+  nav {
+    flex: 1;
+    padding: 20px;
     .nav-list {
       list-style-type: none;
       padding: 0;
-
       li {
-        margin-top: 30px;
-        
+        margin-top: 32px;
+        margin-bottom: 20px;
         .nav-item {
-          
+          color: #C0C0C0	;;
           display: flex;
           align-items: center;
           justify-content: space-between;
           text-decoration: none;
-          color: '#240447';
-          
+          margin: 0 auto;
           svg {
-            margin-right: 20px;
+            margin-right: 22px;
           }
         }
-        .nav-item:visited {
-          color: '#240447';
+      }
+      li:hover {
+        .nav-item {
+          color: $red;
         }
+        hr.nav-separator {
+          background-color: $red;
+          border-color: $red;
+         }
+      }
+      .menu-button {
+        visibility: hidden;
       }
     }
   }
 }
-
-aside.show {
-  min-height: 120px;
-  transition: min-height 0.5s ease-out;
-}
-
-aside.hidden {
-  min-height: 5vh;
-  transition: min-height 0.7s ease-out;
-}
-
-@media only screen and (max-width: 803px) {
-  aside {
-    header {
-      h4 {
-        span#first-name {
-          writing-mode: vertical-lr;
-          text-orientation: upright;
-        }
-        span#last-name {
-          writing-mode: vertical-lr;
-          text-orientation: upright;
-          vertical-align: top;
-        }
-      }
-    }
-    nav {
-      ul {
-        li {
-          a.nav-item {
-            font-size: 14px;
-            margin-right: 5;
-          
-           svg {
-             margin-right: 5;
-           }
-          }
-        }
-      }
-    }
-  }
-}
-
-  @media only screen and (max-width: 760px) {
-    aside {
+// ========
+//SIDEBAR TURNS INTO STICKY TOP NAVBAR
+// =========
+  @media only screen and (max-width: 660px) {
+    aside.hidden {
+      min-width: 100%;
+      flex-direction: row;
+      position: sticky;
+      z-index: 5;
+      height: 30px;
       header {
         h4 {
-          span {
-            font-size: 2.5vw;
+          span#first-name {
+            writing-mode: horizontal-tb;
           }
-        }
+          span#last-name {
+            writing-mode: horizontal-tb;
+          }
+        } 
       }
       nav {
-        ul.nav-list {
+        padding: 25px;
+        .nav-list {
           li {
             a.nav-item {
-             span {
-              display: none
-             }
-             svg {
-              margin: 0 auto;
-              font-size: 3vw;
-             }
+              display:none;
+            }
+            .menu-button {
+              visibility: visible;
+              margin-top: 15px;
+              outline: 0;
+              border: none;
+              -moz-outline-style: none;
+            }
+            hr.nav-separator {
+              display: none;
             }
           }
         }
       }
     }
-  }
 
-  @media only screen and (max-width: 496px) {
-    aside {
+    aside.show {
+      height: 30px;
       header {
-        h4 {
-          span {
-            font-size: 14px;
+        align-self: start;
+      }
+      nav {
+        padding: 0px 0px 10px 0px;;
+        ul.nav-list {
+          hr.nav-separator {
+            width: 30vw;
+          }
+          li {
+            a.nav-item {
+              .menu-button {
+                visibility: visible;
+                outline: 0;
+                border: none;
+                -moz-outline-style: none;
+              }
+              span {
+                visibility: visible;
+                opacity: 1;
+                transition: visibility 0.5s, opacity 0.5s ease-out;
+               
+              }
+              svg {
+                visibility: visible;
+                opacity: 1;
+                transition: visibility 0.5s, opacity 0.5s ease-out;
+              
+              }
+            }
+            .menu-button {
+              visibility: visible;
+              margin-top: 15px;
+            }
           }
         }
-      }
+      } 
     }
   }
