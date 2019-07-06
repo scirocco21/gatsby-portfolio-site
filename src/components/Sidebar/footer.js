@@ -17,10 +17,10 @@ export default class Footer extends React.Component {
      )
     return (
       <div style={{flex: 0.5}} className="footer-wrapper">
-        <footer className='layout-footer'>
+        <footer className='layout-footer' style={{color: 'rgb(128, 128, 128)'}}>
           <p style={{padding: 10, fontWeight: 'bold'}}>&#169;
             2019 Sebastian Gertz</p>
-          <p>Made with <a style={{color: '#fffff0'}} href="https://www.gatsbyjs.org/">Gatsby.JS</a></p>
+          <p>Made with <a href="https://www.gatsbyjs.org" target="_blank">Gatsby.JS</a></p>
           <ul className="icons">
             {socialLinksMarkup}
           </ul>
