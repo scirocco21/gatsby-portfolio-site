@@ -1,6 +1,6 @@
 import React from 'react';
-import Menu from './Menu.js'
-import { HamburgerSpring } from 'react-animated-burgers'
+import { HamburgerSpring } from 'react-animated-burgers';
+
 
 export default class MenuButton extends React.Component {
   state = {
@@ -19,7 +19,8 @@ export default class MenuButton extends React.Component {
         isActive={this.state.isActive}
         toggleButton={this.handleClick.bind(this)}
         className="menu-button"
-        buttonWidth={22}>
+        buttonWidth={22}
+        barColor="#EE015D">
       </HamburgerSpring>
      
     </>
