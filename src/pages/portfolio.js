@@ -8,18 +8,20 @@ import voynich from '../images/voynich.jpg';
 import biblio from '../images/biblio.jpg';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { graphql, StaticQuery } from 'gatsby'
-import Img from "gatsby-image"
-ß
+import Img from "gatsby-image";
+import "../assets/sass/portfolio.scss"
+
+
 // TODO: turn all <img/> tags into Gatsby <Img> comps
 
 const Portfolio = () => (
-  <Layout>
+  <Layout displayFooter={true}>
     <SEO title="Portfolio" />
     <StaticQuery query={graphql`
       query {
         desktop: file(relativePath: { eq: "museums-explorer.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 4160) {
+            fluid {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
