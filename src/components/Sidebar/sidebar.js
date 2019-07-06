@@ -44,21 +44,26 @@ export default class Sidebar extends React.Component {
 
   render() {
     const expandedClass = this.state.isExpanded ? 'show' : 'hidden';
-    const pagesList = pages.map((page) => {
+    const pagesList = pages.map((page, index) => {
       return (
-        <li key={page.id}>
+        <>
+        <li key={index}>
+         
             <Link to={`/${page.id}`} className="nav-item">
               <FontAwesomeIcon icon={page.icon}/>
-              <span>{page.title}</span>
+              <p style={{ margin: '0',
+    padding: '0'}}>{page.title}</p>
             </Link>
+            <hr className="nav-separator"></hr>
         </li>
+        </>
       )
     })
     return(
       <aside className={expandedClass}>
-        <header style={{padding: '15px'}}>
+        <header style={{padding: '25px'}}>
           <h4 style={{margin: '0 auto'}}>
-            <span id="first-name">SEBASTIAN </span>
+            <span id="first-name">SEBASTIAN </span><br></br>
             <span id="last-name">GERTZ</span>
           </h4>
         </header>
