@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "gatsby";
 import MenuButton from '../menuButton.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from '../../images/logo.svg'
 
 const pages = [
   {
@@ -48,11 +49,10 @@ export default class Sidebar extends React.Component {
       return (
         <>
         <li key={index}>
-         
             <Link to={`/${page.id}`} className="nav-item">
               <FontAwesomeIcon icon={page.icon}/>
-              <p style={{ margin: '0',
-    padding: '0'}}>{page.title}</p>
+              <h5 style={{ margin: '0',
+    padding: '0'}}>{page.title}</h5>
             </Link>
             <hr className="nav-separator"></hr>
         </li>
@@ -62,10 +62,7 @@ export default class Sidebar extends React.Component {
     return(
       <aside className={expandedClass}>
         <header style={{padding: '25px'}}>
-          <h4 style={{margin: '0 auto'}}>
-            <span id="first-name">SEBASTIAN </span><br></br>
-            <span id="last-name">GERTZ</span>
-          </h4>
+          <img src={logo} style={{ width: '100px'}}/>
         </header>
         <nav style={{flex: 5}}>
           <ul className="nav-list">
