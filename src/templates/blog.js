@@ -1,8 +1,9 @@
 import React from 'react'
 import Layout from "../components/layout";
 import { graphql,} from "gatsby";
+import Head from '../components/head'
 import Img from "gatsby-image";
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { BLOCKS } from '@contentful/rich-text-types';
 
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 export const query = graphql`
@@ -42,6 +43,7 @@ const Blog = (props) => {
   }
   return (
     <Layout displayFooter={true}>
+      <Head title={props.data.contentfulBlogPost.title} />
       <div style={{padding: '20px', textAlign: 'left'}}>
         <div>
           <div>
