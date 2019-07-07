@@ -67,3 +67,8 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+src/utils/pathFinder.js
+src/utils/chromata.js
+src/utils/pathQueue.js
+src/utils/pathRenderer.js
+src/utils/utils.js
