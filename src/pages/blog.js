@@ -3,6 +3,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import Layout from "../components/layout";
 import Img from 'gatsby-image';
 import "../assets/sass/blog.scss"
+import Head from "../components/head"
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -26,8 +27,8 @@ const BlogPage = () => {
 
   return  (
     <Layout displayFooter={true}>
-      <div style={{textAlign: 'left', padding: '0 20px 0 20px'}}>
-        
+      <Head title="Blog" />
+      <div style={{textAlign: 'left', padding: '0 40px 40px 40px'}}>
         <ul style={{listStyle: 'none', padding: '0',margin: '0'}}>
         <h1>Blog</h1>
           {data.allContentfulBlogPost.edges.map((edge) => {
