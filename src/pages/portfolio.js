@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo";
 import { Carousel } from 'react-responsive-carousel';
 import myReads from '../images/myReads.jpg';
 import coinopoly from '../images/coinopoly.jpg';
@@ -9,14 +8,15 @@ import biblio from '../images/biblio.jpg';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { graphql, StaticQuery } from 'gatsby'
 import Img from "gatsby-image";
-import "../assets/sass/portfolio.scss"
+import "../assets/sass/portfolio.scss";
+import Head from '../components/head';
 
 
 // TODO: turn all <img/> tags into Gatsby <Img> comps
 
 const Portfolio = () => (
   <Layout displayFooter={true}>
-    <SEO title="Portfolio" />
+    <Head title="Portfolio" />
     <StaticQuery query={graphql`
       query {
         desktop: file(relativePath: { eq: "museums-explorer.jpg" }) {
