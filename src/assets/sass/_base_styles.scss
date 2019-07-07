@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url("https://use.typekit.net/wrq5gnf.css");
 
 // color scheme:
 $turqois: #02E1E4;
@@ -9,11 +10,18 @@ $red: #ED5F7B;
 $dark: #171717;
 
 // fonts
-$primary: 'Roboto', sans-serif;
-$secondary: 'Montserrat', sans-serif;
+$primary: 'Oswald', sans-serif;
+$primary-bold: 'bebas-kai';
+$secondary: 'Garamond', sans-serif;
 
-h1,h2,h3,h4,h5,h6 {
+h1 {
+  font-family: $primary-bold;
+  letter-spacing: .5px;
+}
+
+h2,h3,h4,h5,h6 {
   font-family: $primary;
+  font-weight: 900;
 }
 
 p {
