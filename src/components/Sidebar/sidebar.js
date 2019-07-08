@@ -6,8 +6,8 @@ import logo from '../../images/logo.svg'
 
 const pages = [
   {
-    title: "Index",
-    id: "/",
+    title: "Home",
+    id: "home",
     icon: 'home'
   }, 
   {
@@ -57,12 +57,18 @@ export default class Sidebar extends React.Component {
       return (
         <>
         <li key={index}>
-            <Link to={`/${page.id}`} className="nav-item" onClick={this.handleClick}>
-              <FontAwesomeIcon icon={page.icon}/>
-              <h5 style={{ margin: '0',
-    padding: '0'}}>{page.title}</h5>
-            </Link>
-            <hr className="nav-separator"></hr>
+          <Link 
+            to={`/${page.id}`} 
+            className="nav-item" 
+            onClick={this.handleClick} 
+            activeClassName='active' 
+            getProps={({ isPartiallyCurrent }) => isPartiallyCurrent ? { className: 'active nav-item'} : {className: 'nav-item'} } 
+          >
+            <FontAwesomeIcon icon={page.icon}/>
+            <h5 style={{ margin: '0',
+  padding: '0'}}>{page.title}</h5>
+            <span></span>
+          </Link>
         </li>
         </>
       )
