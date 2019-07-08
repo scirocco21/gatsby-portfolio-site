@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/layout"
 import { Carousel } from 'react-responsive-carousel';
 import myReads from '../images/myReads.jpg';
 import coinopoly from '../images/coinopoly.jpg';
@@ -13,9 +12,10 @@ import Head from '../components/head';
 
 
 // TODO: turn all <img/> tags into Gatsby <Img> comps
+// TODO: wrap carousel images in Link tags 
 
 const Portfolio = () => (
-  <Layout displayFooter={true}>
+  <>
     <Head title="Portfolio" />
     <StaticQuery query={graphql`
       query {
@@ -31,33 +31,38 @@ const Portfolio = () => (
      render={data => {
        const imageData = data.desktop.childImageSharp.fluid
        return (
-        <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false}>
-          <div>
-            <Img fluid={imageData} />
-            <p className="legend">Museums Explorer</p>
-          </div>
-          <div>
-            <img src={myReads} />
-            <p className="legend">Personal Bookshelf Organiser</p>
-          </div>
-          <div>
-            <img src={coinopoly} />
-            <p className="legend">Cryptocurrency Portfolio Tracker</p>
-          </div>
-          <div>
-            <img src={voynich} />
-            <p className="legend">Matching Game</p>
-          </div>  
-          <div>
-            <img src={biblio} />
-            <p className="legend">Booknotes App</p>
-          </div>
-        </Carousel>
+         <>
+          <section id="carousel">
+            <h1 style={{textAlign: 'left'}}>Portfolio</h1>
+            <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false}>
+              <div>
+                <Img fluid={imageData} />
+                <p className="legend">Museums Explorer</p>
+              </div>
+              <div>
+                <img src={myReads} />
+                <p className="legend">Personal Bookshelf Organiser</p>
+              </div>
+              <div>
+                <img src={coinopoly} />
+                <p className="legend">Cryptocurrency Portfolio Tracker</p>
+              </div>
+              <div>
+                <img src={voynich} />
+                <p className="legend">Matching Game</p>
+              </div>  
+              <div>
+                <img src={biblio} />
+                <p className="legend">Booknotes App</p>
+              </div>
+            </Carousel>
+          </section>
+        </>
        )
       }
      }
      />
-  </Layout>
+    </>
 )
 
 export default Portfolio

@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import Layout from "../components/layout";
 import Img from 'gatsby-image';
 import "../assets/sass/blog.scss"
 import Head from "../components/head"
@@ -26,7 +25,7 @@ const BlogPage = () => {
   `)
 
   return  (
-    <Layout displayFooter={true}>
+    <>
       <Head title="Blog" />
       <div style={{textAlign: 'left', padding: '0 40px 40px 40px'}}>
         <ul style={{listStyle: 'none', padding: '0',margin: '0'}}>
@@ -50,7 +49,7 @@ const BlogPage = () => {
           })}
         </ul>
       </div>
-    </Layout>
+    </>
   )
 }
 
