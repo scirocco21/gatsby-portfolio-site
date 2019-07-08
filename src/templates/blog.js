@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from "../components/layout";
 import { graphql,} from "gatsby";
 import Head from '../components/head'
 import Img from "gatsby-image";
@@ -42,7 +41,7 @@ const Blog = (props) => {
     }
   }
   return (
-    <Layout displayFooter={true}>
+    <>
       <Head title={props.data.contentfulBlogPost.title} />
       <div style={{padding: '20px', textAlign: 'left'}}>
         <div>
@@ -55,7 +54,7 @@ const Blog = (props) => {
           {props.data.contentfulBlogPost.heroImage && <Img fluid={props.data.contentfulBlogPost.heroImage.fluid} style={{maxWidth: '70%', height: 'auto'}}/>}
         {documentToReactComponents(props.data.contentfulBlogPost.content.json, options)}
       </div>
-    </Layout>
+    </>
   )
 }
 
