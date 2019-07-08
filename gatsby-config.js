@@ -1,3 +1,4 @@
+// comment this out for production builds
 // const fs = require('fs');
 // const dotenv = require('dotenv');
 // const envConfig = 
@@ -29,9 +30,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
+        name: `Sebastian Gertz | Web Developer | NYC`,
+        short_name: `Seb Gertz Portfolio`,
+        start_url: `home`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
@@ -54,6 +55,7 @@ module.exports = {
         imagePath: 'path.to.image',
       },
     },
-    `gatsby-plugin-offline`
-  ],
+    `gatsby-plugin-offline`, 
+    `gatsby-plugin-layout`
+  ]
 }
