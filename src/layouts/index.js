@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import Sidebar from "./Sidebar/sidebar"
+import Sidebar from "../components/Sidebar/sidebar"
 import "../assets/sass/layout.scss"
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import Footer from './Sidebar/footer.js';
+import Footer from '../components/Sidebar/footer.js';
 
 library.add(fas, fab)
 
@@ -17,7 +17,7 @@ class Layout extends React.Component {
         <Sidebar siteTitle={this.props.title}/>
         <div className="container">
           <main style={{ flex: 1 }}>{this.props.children}</main>
-              {this.props.displayFooter && <Footer></Footer>}
+            <Footer></Footer>
         </div>
       </div>
     )
