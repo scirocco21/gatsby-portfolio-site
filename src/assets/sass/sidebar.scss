@@ -29,7 +29,9 @@ aside {
         margin-top: 32px;
         margin-bottom: 20px;
         .nav-item {
-          color: #C0C0C0	;;
+          border-bottom: 2px solid #C0C0C0;
+          line-height: 3;
+          color: #C0C0C0;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -42,12 +44,10 @@ aside {
       }
       li:hover {
         .nav-item {
+          border-bottom: 2px solid $red;
+
           color: $red;
         }
-        hr.nav-separator {
-          background-color: $red;
-          border-color: $red;
-         }
       }
       .menu-button {
         visibility: hidden;
@@ -64,7 +64,10 @@ aside {
       flex-direction: row;
       position: sticky;
       z-index: 5;
-      height: 30px;
+
+      height: 90px;
+      transition: height 1s ease-out;
+
       header {
         h4 {
           span#first-name {
@@ -98,7 +101,8 @@ aside {
     }
 
     aside.show {
-      height: 30px;
+      height: 200px;
+      transition: height 1s ease-out;
       header {
         align-self: start;
       }
@@ -116,10 +120,12 @@ aside {
                 border: none;
                 -moz-outline-style: none;
               }
-              span {
+              h5 {
                 visibility: visible;
                 opacity: 1;
                 transition: visibility 0.5s, opacity 0.5s ease-out;
+                font-size: 16px;
+
                
               }
               svg {
@@ -136,5 +142,15 @@ aside {
           }
         }
       } 
+    }
+  }
+
+  .active {
+    border-bottom: 2px solid $red!important;
+    svg {
+      color: $red;
+    }
+    h5 {
+      color: $red;
     }
   }
