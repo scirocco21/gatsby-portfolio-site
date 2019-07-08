@@ -34,7 +34,8 @@ const pages = [
 
 export default class Sidebar extends React.Component {
   state = {
-    isExpanded: false
+    isExpanded: false,
+    buttonActive: false
   }
 
   expandMenu = () => {
@@ -43,13 +44,20 @@ export default class Sidebar extends React.Component {
     })
   }
 
+  handleClick = () => {
+    this.setState({
+      buttonActive: !this.state.buttonActive
+    });
+    this.expandMenu()
+  }
+
   render() {
     const expandedClass = this.state.isExpanded ? 'show' : 'hidden';
     const pagesList = pages.map((page, index) => {
       return (
         <>
         <li key={index}>
-            <Link to={`/${page.id}`} className="nav-item">
+            <Link to={`/${page.id}`} className="nav-item" onClick={this.handleClick}>
               <FontAwesomeIcon icon={page.icon}/>
               <h5 style={{ margin: '0',
     padding: '0'}}>{page.title}</h5>
@@ -68,7 +76,7 @@ export default class Sidebar extends React.Component {
           <ul className="nav-list">
           {pagesList}
           <li>
-            <MenuButton expandMenu={this.expandMenu}/>
+            <MenuButton handleClick={this.handleClick} buttonActive={this.state.buttonActive}/>
           </li>
           </ul>
         </nav>
