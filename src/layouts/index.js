@@ -18,7 +18,7 @@ class Layout extends React.Component {
         <Sidebar siteTitle={this.props.title}/>
         <div className="container">
           <main style={{ flex: 1 }}>{this.props.children}</main>
-          { this.props.location.pathname == "/home" && <Footer /> } 
+          { this.props.location.pathname !== "/" && <Footer /> } 
         </div>
       </div>
       )
