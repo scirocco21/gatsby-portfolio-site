@@ -18,7 +18,7 @@ class Layout extends React.Component {
         <Sidebar siteTitle={this.props.title}/>
         <div className="container">
           <main style={{ flex: 1 }}>{this.props.children}</main>
-          <Footer /> 
+          { this.props.location.pathname == "/home" && <Footer /> } 
         </div>
       </div>
       )
@@ -41,9 +41,6 @@ export default (props) => {
       }
     `}
       render={(data) => {
-        if (props.pageResources.page.path == "/home/") {
-          return <SimpleLayout>{props.children}</SimpleLayout>
-        }
         return <Layout title={data.site.siteMetadata.title} {...props}/>
       }
     }
