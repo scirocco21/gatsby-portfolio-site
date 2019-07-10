@@ -58,26 +58,13 @@ aside {
 // ========
 //SIDEBAR TURNS INTO STICKY TOP NAVBAR
 // =========
+
   @media only screen and (max-width: 660px) {
     aside.hidden {
       min-width: 100%;
       flex-direction: row;
       position: sticky;
-      z-index: 5;
-
-      height: 90px;
-      transition: height 1s ease-out;
-
-      header {
-        h4 {
-          span#first-name {
-            writing-mode: horizontal-tb;
-          }
-          span#last-name {
-            writing-mode: horizontal-tb;
-          }
-        } 
-      }
+      max-height: 150px;
       nav {
         padding: 25px;
         .nav-list {
@@ -101,18 +88,15 @@ aside {
     }
 
     aside.show {
-      height: 200px;
-      transition: height 1s ease-out;
+      max-height: 580px;
       header {
         align-self: start;
       }
       nav {
         padding: 0px 0px 10px 0px;;
         ul.nav-list {
-          hr.nav-separator {
-            width: 30vw;
-          }
           li {
+          
             a.nav-item {
               .menu-button {
                 visibility: visible;
@@ -121,18 +105,7 @@ aside {
                 -moz-outline-style: none;
               }
               h5 {
-                visibility: visible;
-                opacity: 1;
-                transition: visibility 0.5s, opacity 0.5s ease-out;
                 font-size: 16px;
-
-               
-              }
-              svg {
-                visibility: visible;
-                opacity: 1;
-                transition: visibility 0.5s, opacity 0.5s ease-out;
-              
               }
             }
             .menu-button {
