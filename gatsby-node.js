@@ -10,9 +10,6 @@ const path = require('path')
 
 module.exports.createPages = async ({graphql, actions }) => {
   const {createPage} = actions;
-  const { createRedirect } = actions
-  createRedirect({ fromPath: '/', toPath: '/home', isPermanent: true })
-  
   const blogTemplate = path.resolve('./src/templates/blog.js');
   const res = await graphql(`
     query {
