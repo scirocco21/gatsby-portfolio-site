@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { ContextProviderComponent } from "../contexts/context.js"
 import { StaticQuery, graphql } from "gatsby"
 import Sidebar from "../components/Sidebar/sidebar"
 import SimpleLayout from './simple.js'
@@ -13,20 +12,18 @@ import Footer from '../components/Sidebar/footer.js';
 library.add(fas, fab)
 
 class Layout extends React.Component {
-    render() {
-      return(
-      <ContextProviderComponent>
-            <div id="main-container" style={{display: 'flex'}}>
-              <Sidebar siteTitle={this.props.title}/>
-              <div className="container">
-                <main style={{ flex: 1 }}>{this.props.children}</main>
-                <Footer /> 
-              </div>
-            </div>
-      </ContextProviderComponent>
-    )
+  render() {
+    return(
+      <div id="main-container" style={{display: 'flex'}}>
+        <Sidebar siteTitle={this.props.title}/>
+        <div className="container">
+          <main style={{ flex: 1 }}>{this.props.children}</main>
+          <Footer /> 
+        </div>
+      </div>
+      )
+    }
   }
-}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
