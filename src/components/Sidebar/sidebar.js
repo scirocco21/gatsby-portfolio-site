@@ -7,27 +7,27 @@ import logo from '../../images/logo.svg'
 const pages = [
   {
     title: "Home",
-    id: "home",
+    id: "/",
     icon: 'home'
   }, 
   {
     title: "Portfolio",
-    id: "portfolio",
+    id: "/portfolio",
     icon: "th"
   },
   {
     title: "Blog",
-    id: "blog",
+    id: "/blog",
     icon: "pencil-alt"
   },
   {
     title: "About",
-    id: "about",
+    id: "/about",
     icon: "user"
   },
   {
     title: "Contact",
-    id: "contact",
+    id: "/contact",
     icon: 'envelope'
   }
 ]
@@ -53,16 +53,17 @@ export default class Sidebar extends React.Component {
 
   render() {
     const expandedClass = this.state.isExpanded ? 'show' : 'hidden';
+    const isPartiallyActive = ({ isPartiallyCurrent }) => isPartiallyCurrent ? { className: "nav-item active" } : {className: 'nav-item'};
     const pagesList = pages.map((page, index) => {
       return (
         <>
         <li key={index}>
           <Link 
-            to={`/${page.id}`} 
+            to={`${page.id}`} 
             className="nav-item" 
             onClick={this.handleClick} 
             activeClassName='active' 
-            getProps={({ isPartiallyCurrent }) => isPartiallyCurrent ? { className: 'active nav-item'} : {className: 'nav-item'} } 
+            getProps={ page.id === "/" ? undefined : isPartiallyActive} 
           >
             <FontAwesomeIcon icon={page.icon}/>
             <h5 style={{ margin: '0',
