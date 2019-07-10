@@ -3,7 +3,20 @@ import React from 'react'
 const Contact = () => (
   <>
   <h1>Get in touch</h1>
-  <form name="contact" method="POST" data-netlify="true">
+  <form 
+    name="contact"  
+    // action="/success/" 
+    method="POST" 
+    data-netlify="true" 
+    data-netlify-honeypot="bot-field"
+  >
+     <input type="hidden" name="form-name" value="contact" />
+     <p hidden>
+      <label>
+        Don’t fill this out:{" "}
+        <input name="bot-field"/>
+      </label>
+    </p>
     <p>
       <label>Your Name: <input type="text" name="name" /></label>   
     </p>
