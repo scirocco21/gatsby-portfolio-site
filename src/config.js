@@ -16,6 +16,33 @@ module.exports = {
       url: 'https://twitter.com/cryptocyclops',
     }
   ],
+  pages: [
+    {
+      title: "Home",
+      id: "/",
+      icon: 'home'
+    }, 
+    {
+      title: "Portfolio",
+      id: "/portfolio",
+      icon: "th"
+    },
+    {
+      title: "Blog",
+      id: "/blog",
+      icon: "pencil-alt"
+    },
+    {
+      title: "About",
+      id: "/about",
+      icon: "user"
+    },
+    {
+      title: "Contact",
+      id: "/contact",
+      icon: 'envelope'
+    }
+  ],
   projects: [
     {
       name: "NYC Museums Explorer",
@@ -26,7 +53,7 @@ module.exports = {
         "Foursquare API"
       ],
       url: "https://nyc-museums-explorer.herokuapp.com",
-      img: "museums-explorer.jpg"
+      imgName: "museums-explorer.jpg"
     },
     {
       name: "Coinopoly",
@@ -36,7 +63,7 @@ module.exports = {
         "React"
       ],
       url: "https://coinopoly.herokuapp.com",
-      img: "coinopoly.jpg"
+      imgName: "coinopoly.jpg"
     },
     {
       name: "Biblio",
@@ -46,7 +73,7 @@ module.exports = {
         "Ruby"
       ],
       url: "https://biblio-sinatra-app.herokuapp.com/",
-      img: "biblio.jpg"
+      imgName: "biblio.jpg"
     },
     {
       name: "MyReads",
@@ -55,7 +82,7 @@ module.exports = {
         "React"
       ],
       url: "https://myreads-bookshelf-app.herokuapp.com/",
-      img: "myReads.jpg"
+      imgName: "myReads.jpg"
     },
     // {
     //   name: "Pixabay Viewer",
@@ -75,7 +102,7 @@ module.exports = {
         "CSS",
       ],
       url: "coming soon",
-      path: "../images/voynich.jpg"
+      imgName: "voynich.jpg"
     }
   ]
 }
