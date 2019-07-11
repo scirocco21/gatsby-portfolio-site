@@ -32,7 +32,7 @@ module.exports = {
       options: {
         name: `Sebastian Gertz | Web Developer | NYC`,
         short_name: `Seb Gertz Portfolio`,
-        start_url: `home`,
+        start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
@@ -48,14 +48,7 @@ module.exports = {
       }
      },
     `gatsby-plugin-catch-links`,
-    {
-      resolve: `gatsby-plugin-remote-images`,
-      options: {
-        nodeType: 'myNodes',
-        imagePath: 'path.to.image',
-      },
-    },
     `gatsby-plugin-offline`, 
-    `gatsby-plugin-layout`
+    `gatsby-plugin-layout`,
   ]
 }
