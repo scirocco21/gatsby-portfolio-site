@@ -8,7 +8,10 @@ export default class About extends React.Component {
     return(
       <>
       <Head title="About"></Head>
-       <img style={{width:'100%'}} src={carbon}/>
+       <img 
+        style={{width:'100%'}} 
+        src={carbon} 
+        alt="code snippet"/>
       </>
     )
   }
