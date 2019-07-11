@@ -2,35 +2,8 @@ import React from 'react';
 import { Link } from "gatsby";
 import MenuButton from '../menuButton.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import config from '../../config.js'
 import logo from '../../images/logo.svg'
-
-const pages = [
-  {
-    title: "Home",
-    id: "/",
-    icon: 'home'
-  }, 
-  {
-    title: "Portfolio",
-    id: "/portfolio",
-    icon: "th"
-  },
-  {
-    title: "Blog",
-    id: "/blog",
-    icon: "pencil-alt"
-  },
-  {
-    title: "About",
-    id: "/about",
-    icon: "user"
-  },
-  {
-    title: "Contact",
-    id: "/contact",
-    icon: 'envelope'
-  }
-]
 
 export default class Sidebar extends React.Component {
   state = {
@@ -54,9 +27,8 @@ export default class Sidebar extends React.Component {
   render() {
     const expandedClass = this.state.isExpanded ? 'show' : 'hidden';
     const isPartiallyActive = ({ isPartiallyCurrent }) => isPartiallyCurrent ? { className: "nav-item active" } : {className: 'nav-item'};
-    const pagesList = pages.map((page, index) => {
+    const pagesList = config.pages.map((page, index) => {
       return (
-        <>
         <li key={index}>
           <Link 
             to={`${page.id}`} 
@@ -71,13 +43,16 @@ export default class Sidebar extends React.Component {
             <span></span>
           </Link>
         </li>
-        </>
       )
     })
     return(
       <aside className={expandedClass}>
         <header style={{padding: '25px'}}>
-          <img src={logo} style={{ width: '100px'}}/>
+          <img 
+            src={logo} 
+            style={{ width: '100px'}} 
+            alt="Sebastian Gertz Logo"
+          />
         </header>
         <nav style={{flex: 5}}>
           <ul className="nav-list">
