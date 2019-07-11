@@ -1,7 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import config from '../../config.js';
-
+import config from '../config.js';
 
 export default class Footer extends React.Component {
   render() {
@@ -20,7 +19,7 @@ export default class Footer extends React.Component {
         <footer className='layout-footer' style={{color: 'rgb(128, 128, 128)'}}>
           <p style={{padding: 10, fontWeight: 'bold'}}>&#169;
             2019 Sebastian Gertz</p>
-          <p>Made with <a href="https://www.gatsbyjs.org" target="_blank">Gatsby.JS</a></p>
+          <p>Made with <a href="https://www.gatsbyjs.org" target="_blank" rel='noopener noreferrer'>Gatsby.JS</a></p>
           <ul className="icons">
             {socialLinksMarkup}
           </ul>
