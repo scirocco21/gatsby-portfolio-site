@@ -7,13 +7,16 @@ p.legend {
 .portfolio-list  {
   padding: 0;
   list-style: none;
-  -webkit-column-count: 2;
-  -moz-column-count:2;
-  column-count: 2;
+  // -webkit-column-count: 2;
+  // -moz-column-count:2;
+  // column-count: 2;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 2fr) );
+
   -webkit-column-gap: 1em;
   -moz-column-gap: 1em;
   column-gap: 1em;
-   margin: 1.5em;
+   margin: 0em;
     -moz-column-gap: 1.5em;
     -webkit-column-gap: 1.5em;
     column-gap: 1.5em;
@@ -22,14 +25,14 @@ p.legend {
 
 .square {
   display: inline-block;
-  background: #fff;
+  background: #f5f5f5;
   padding: 1em;
   margin: 0 0 1.5em;
   width: 100%;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-shadow: 2px 2px 4px 0;
+  box-shadow: 2px 2px 2px 0;
   position: relative;
 
   img {
