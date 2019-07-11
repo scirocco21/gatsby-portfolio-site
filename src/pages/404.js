@@ -5,7 +5,13 @@ import "../assets/sass/404.scss";
 
 const Iframe = (props) => ( 
   <div>          
-    <iframe src={props.src} height={props.height} width={props.width} frameborder={props.frameborder}/>
+    <iframe 
+      src={props.src} 
+      height={props.height} 
+      width={props.width} 
+      frameborder={props.frameborder}
+      title="Astronaut walking on sand"
+    />
   </div>
 )
 
