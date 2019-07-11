@@ -30,9 +30,13 @@ const BlogPage = () => {
       <div style={{textAlign: 'left', padding: '0 40px 40px 40px'}}>
         <ul style={{listStyle: 'none', padding: '0',margin: '0'}}>
         <h1>Blog</h1>
-          {data.allContentfulBlogPost.edges.map((edge) => {
+          {data.allContentfulBlogPost.edges.map((edge, index) => {
             return (
-              <li style={{marginBottom: '15px'}} className="post-card">
+              <li 
+                style={{marginBottom: '15px'}} 
+                className="post-card"
+                key={index}
+              >
                 <Link to={`/blog/${edge.node.slug}`}>
                   <div style={{display: 'flex', alignContent: 'center', alignItems: 'center', border: '1px solid #D3D3D3', borderRadius: '5px', boxShadow: '0px 0px 1px 1px #D3D3D3	'}}>
                     <div style={{padding: '10px 0 10px 10px', height: '100%', minWidth: '33%', width: '33%'}}>
