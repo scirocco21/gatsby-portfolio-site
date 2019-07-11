@@ -2,12 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Sidebar from "../components/Sidebar/sidebar"
-import SimpleLayout from './simple.js'
 import "../assets/sass/layout.scss"
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import Footer from '../components/Sidebar/footer.js';
+import Footer from './footer.js';
 
 library.add(fas, fab)
 
