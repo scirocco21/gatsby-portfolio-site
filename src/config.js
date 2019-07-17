@@ -59,7 +59,7 @@ module.exports = {
       name: "Coinopoly",
       desc: "Cryptocurrency Portfolio Tracker",
       tags: [
-        "Ruby on Rails",
+        "Ruby",
         "React"
       ],
       url: "https://coinopoly.herokuapp.com",
@@ -99,10 +99,15 @@ module.exports = {
       desc: "Voynich Manuscript Themed Matching Game",
       tags: [
         "JavaScript",
-        "CSS",
       ],
       url: "coming soon",
       imgName: "voynich.jpg"
     }
+  ],
+  filters: [
+    "All",
+    "React",
+    "Ruby",
+    "JavaScript"
   ]
 }
