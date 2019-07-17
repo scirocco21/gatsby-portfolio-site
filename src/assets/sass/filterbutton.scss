@@ -1,0 +1,16 @@
+button {
+  font-size: 14px;
+  outline: none;
+  padding: 5px 10px 5px 10px;
+  font-weight: 700;
+}
+
+button.normal {
+  background-color: '#555555';
+  color: black;
+}
+
+button.filter-active {
+  background-color: black;
+  color: white;
+}
