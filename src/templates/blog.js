@@ -28,7 +28,7 @@ export const query = graphql`
 `
 
 const Blog = (props) => {
-  const Text = ({ children }) => <p>{children}</p>;
+  const Text = ({ children }) => <p style={{fontSize: '1.25rem'}}>{children}</p>;
   const options = {
     renderNode: {
       "embedded-asset-block": node => {
@@ -48,7 +48,7 @@ const Blog = (props) => {
           <div>
             <h1>{props.data.contentfulBlogPost.title}</h1>
             <p>{props.data.contentfulBlogPost.publishedDate}</p>
-            {props.data.contentfulBlogPost.tldr.internal.content && <p>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></p>}
+            {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
           </div>
         </div>  
           {props.data.contentfulBlogPost.heroImage && <Img fluid={props.data.contentfulBlogPost.heroImage.fluid} style={{maxWidth: '70%', height: 'auto'}}/>}
