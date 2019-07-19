@@ -7,11 +7,9 @@ p.legend {
 .portfolio-list  {
   padding: 0;
   list-style: none;
-  // -webkit-column-count: 2;
-  // -moz-column-count:2;
-  // column-count: 2;
+
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(250px, 2fr) );
+  grid-template-columns: repeat( auto-fit, minmax(300px, 2fr) );
 
   -webkit-column-gap: 1em;
   -moz-column-gap: 1em;
