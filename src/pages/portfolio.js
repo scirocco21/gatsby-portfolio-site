@@ -119,7 +119,7 @@ class Portfolio extends React.Component {
             </ul> 
             <button
               onClick={() => this.toggleModal()} 
-              style={{position:'absolute', top:'0', right: '5px', textDecoration: 'none', margin: "0", padding: "0", border: "none"}}
+              style={{position:'absolute', backgroundColor: "white", top:'0', right: '5px', textDecoration: 'none', margin: "0", padding: "0", border: "none"}}
             >
               <h1 style={{margin: '0', color: 'black', fontSize: "24px"}}>&times;</h1>
             </button>
