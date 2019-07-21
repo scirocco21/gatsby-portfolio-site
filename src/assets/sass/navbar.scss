@@ -21,6 +21,8 @@
     }
     div {
       .nav-list {
+        list-decoration: none;
+        padding: 0;
         a.nav-item {
           display:none;
         }
