@@ -9,8 +9,8 @@ const BackgroundSection = ({ className, children, imgName }) => (
         allImageSharp {
           edges {
             node {
-              fluid(quality: 90, maxWidth: 4160) {
-                ...GatsbyImageSharpFluid_withWebp
+              fluid(quality: 90, maxWidth: 1260) {
+                ...GatsbyImageSharpFluid
                 originalName
               }
             }
@@ -28,8 +28,8 @@ const BackgroundSection = ({ className, children, imgName }) => (
       }
        return (
           <BackgroundImage
-            Tag="section"
-            className={className}
+            // Tag="section"
+            // className={className}
             fluid={image.node.fluid}
             style={{  
               width: '100%', 
@@ -37,12 +37,9 @@ const BackgroundSection = ({ className, children, imgName }) => (
               backgroundPosition: 'bottom center',
               backgroundRepeat: 'repeat-y',
               backgroundSize: 'cover',
-            
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-             
-              
             }}
           >{children}</BackgroundImage>
        )
