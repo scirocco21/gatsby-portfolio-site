@@ -1,9 +1,8 @@
 import React from "react"
 import "../assets/sass/portfolio.scss";
 import Head from '../components/head';
-import ListShuffler from '../components/ListShuffler.js'
+import ProjectList from '../components/ProjectList'
 import config from '../config.js'
-import {shuffle} from "lodash";
 import Modal from 'react-awesome-modal'
 import Image from '../components/image'
 import '../assets/sass/filterbutton.scss'
@@ -87,7 +86,7 @@ class Portfolio extends React.Component {
               {filters}
             </ul>
           </h6>
-          <ListShuffler 
+          <ProjectList 
             projects={this.state.projects} 
             shuffleList={this.shuffleList} 
             toggleModal={this.toggleModal} 
