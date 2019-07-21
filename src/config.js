@@ -60,7 +60,7 @@ module.exports = {
       desc: "Cryptocurrency Portfolio Tracker",
       tags: [
         "Ruby",
-        "React"
+        "JavaScript"
       ],
       url: "https://coinopoly.herokuapp.com",
       imgName: "coinopoly.jpg"
@@ -109,5 +109,55 @@ module.exports = {
     "React",
     "Ruby",
     "JavaScript"
+  ],
+  skills: [
+    "react",
+    "javascript",
+    "jquery",
+    "nodejs",
+    "npm",
+    "ruby",
+    "ror",
+    "sqllite",
+    "html5",
+    "css3",
+    "bootstrap",
+    "sass",
+    "git",
+    "heroku"
+  ],
+  experience: [
+    {
+      title: "Java Developer Training",
+      employer: "MThree Consulting",
+      dates: "02/2019-04/2019"
+    },
+    {
+      title: "Supernumerary Teaching Fellow in Philosophy",
+      employer: "St John’s College, Oxford",
+      dates: "10/2012-10/2017"
+    }, 
+    {
+      title: "Assistant Editor and Research Associate",
+      employer: "King’s College London",
+      dates: "09/2010⎯09/2012"
+    }
+  ],
+  education: [
+    {
+      name: "Software Engineering Program",
+      school: "Flatiron School",
+      year: "2018"
+    },
+    {
+      name: "Front-End Web Development Nanodegree",
+      school: "Udacity",
+      year: "2018"
+    },
+    {
+      name: "PhD Classics",
+      school: "University of Cambridge",
+      year: "2010"
+    }
   ]
 }
