@@ -13,11 +13,11 @@ export default class Project extends React.Component {
     const project = this.props.projectData
     return (    
       <>
-      <div className="square" onClick={() => this.handleClick(this.props.projectData)}>
-        <Image imgName={this.props.projectData.imgName} />
+      <div className="square" onClick={() => this.handleClick(project)}>
+        <Image imgName={project.imgName} />
         <div id="overlay" style={{color: 'white'}}>
           <div>
-            <h2 style={{fontFamily: 'bebas-kai', padding: '5px'}}>{this.props.projectData.name}</h2>
+            <h2 style={{fontFamily: 'bebas-kai', padding: '5px'}}>{project.name}</h2>
             <FontAwesomeIcon icon="plus"/>
           </div>
         </div>

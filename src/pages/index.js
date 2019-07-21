@@ -9,8 +9,7 @@ export default class Home extends React.Component {
   
   render() {
     const backgroundImage = "possibe-background.png"
-    const socialLinks = config.socialLinks
-    const socialLinksMarkup = socialLinks.map(
+    const socialLinksMarkup = config.socialLinks.map(
       link => {
         return <li key={link.id}>
           <a href={link.url} target='_blank' rel='noopener noreferrer'>
