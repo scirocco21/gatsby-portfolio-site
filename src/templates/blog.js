@@ -2,7 +2,9 @@ import React from 'react'
 import { graphql,} from "gatsby";
 import Head from '../components/head'
 import Img from "gatsby-image";
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import Highlight from 'react-highlight.js'
+import "../assets/monokai.css"
 
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 export const query = graphql`
@@ -29,7 +31,19 @@ export const query = graphql`
 
 const Blog = (props) => {
   const Text = ({ children }) => <p style={{fontSize: '1.25rem'}}>{children}</p>;
+  const Code = ({children}) => <pre><code>{children}</code></pre>
   const options = {
+    renderMark: {
+      [MARKS.CODE]: code => {
+        return (
+          <Code>
+            <Highlight language="javascript">
+              {code}
+            </Highlight>
+          </Code>
+        )
+      }
+    },
     renderNode: {
       "embedded-asset-block": node => {
         const alt = node.data.target.fields.title['en-US'];
