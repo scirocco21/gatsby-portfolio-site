@@ -120,7 +120,7 @@ module.exports = {
         "Rails"
       ],
       url: "https://doublecheck-react-rails-app.herokuapp.com/",
-      imgName: "doublecheck.jpg"
+      imgName: "doublecheck.png"
     }
 
   ],
