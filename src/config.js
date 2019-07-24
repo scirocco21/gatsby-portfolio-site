@@ -56,6 +56,16 @@ module.exports = {
       imgName: "museums-explorer.jpg"
     },
     {
+      name: "DoubleCheck",
+      desc: "React/Rails interface for Watson API, with Redux state management",
+      tags: [
+        "React",
+        "Rails"
+      ],
+      url: "https://doublecheck-react-rails-app.herokuapp.com/",
+      imgName: "doublecheck.png"
+    },
+    {
       name: "Coinopoly",
       desc: "Cryptocurrency Portfolio Tracker",
       tags: [
@@ -113,14 +123,13 @@ module.exports = {
       imgName: "arcade-game.jpg"
     }, 
     {
-      name: "DoubleCheck",
-      desc: "React/Rails interface for Watson API, with Redux state management",
+      name: "Pixel Painter",
+      desc: "In-broswer pixel art drawing tool",
       tags: [
-        "React",
-        "Rails"
+        "JavaScript"
       ],
-      url: "https://doublecheck-react-rails-app.herokuapp.com/",
-      imgName: "doublecheck.png"
+      url: "https://scirocco21.github.io/pixel-painter",
+      imgName: "pixel-painter.png"
     }
 
   ],
