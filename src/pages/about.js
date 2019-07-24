@@ -3,7 +3,10 @@ import Head from '../components/head'
 import "../assets/sass/about.scss"
 import DevIcon, {iconList} from "devicon-react-svg";
 import config from "../config.js"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Fade from 'react-reveal/Fade';
+import selfie from "../images/selfie.jpg"
+
 
 export default class About extends React.Component {  
   render() {
@@ -14,19 +17,19 @@ export default class About extends React.Component {
           <h1 style={{textAlign: "left"}}>About</h1>
           {/* <h1>A little bit about myself</h1> */}
           <div id="personal">
-            {/* <div id="selfie-wrapper">
-              <img src="./assets/SebastianGertz6857.jpg" alt="Profile Picture"/>
-            </div> */}
-            <p className="lead">I came to web development from a previous career teaching Ancient Greek philosophy and logic (you can find my academic work <a href="https://independent.academia.edu/SebastianGertz1" target="_blank" rel="noopener noreferrer">here</a>). Coding combines my love for problem-solving with my desire to have a tangible impact through my work. I thrive on new challenges and am always seeking to expand my skill set by learning new technologies and frameworks.</p>
+            <p className="lead"><em>I came to web development from a previous career teaching Ancient Greek philosophy and logic (you can find my academic work <a href="https://independent.academia.edu/SebastianGertz1" target="_blank" rel="noopener noreferrer">here</a>). Coding combines my love for problem-solving with my desire to have a tangible impact through my work. I thrive on new challenges and am always seeking to expand my skill set by learning new technologies and frameworks.</em></p>
           </div>
-          <div id="skills">
-            <h1>Skills</h1>
-            <ul id="skill-icons" class="row">
+          <img src={selfie} alt="Profile Picture" id="selfie"/>
+          <div id="skills" style={{marginTop: "5rem"}}>
+            <h3>Skills</h3>
+            <ul id="skill-icons">
               {config.skills.map((skill, index) => {
                 return (
-                  <li key={index} title={skill}>
-                    <DevIcon icon={skill} style={{width: "6rem"}}/>
-                  </li>
+                  <Fade key={index}>
+                    <li key={index} title={skill}>
+                      <DevIcon icon={skill} style={{width: "5rem"}}/>
+                    </li>
+                  </Fade>
                 )
               })}
             </ul>
@@ -34,37 +37,40 @@ export default class About extends React.Component {
         </div>
 
       <div id="resume">
-        <h5>Resume</h5>
         <div id="work-experience">
-          <h1>Work Experience</h1>
-          {config.experience.map(item => {
+          <h4>Work Experience</h4>
+          {config.experience.map((item,index) => {
             return (
-              <div class="resume-item">
-                <FontAwesomeIcon icon="briefcase"/>
-                <div class="description"> 
-                  <h5>{item.title}</h5>
-                  <h6>{item.employer}</h6>
-                  <h6>{item.dates}</h6>
-                  <hr/>
+                <div className="resume-item" key={index}>
+                  <Fade key={index}>
+                    <FontAwesomeIcon icon="briefcase"/>
+                    <div className="description"> 
+                      <h5>{item.title}</h5>
+                      <h6>{item.employer}</h6>
+                      <h6>{item.dates}</h6>
+                      <hr/>
+                    </div>
+                  </Fade>
                 </div>
-              </div>
             )
           })}
         </div>
       </div>
 
   	<div id="education">
-      <h1>Education</h1>
-        {config.education.map(item => {
+      <h4>Education</h4>
+        {config.education.map((item, index) => {
           return (
-            <div class="resume-item">
-            <FontAwesomeIcon icon="graduation-cap"/>      
-              <div class="description">
-                <h5>{item.name}</h5>
-                <h6>{item.school}</h6>
-                <h6>{item.year}</h6>
-                <hr/>
-              </div>
+            <div className="resume-item" key={index}>
+              <Fade key={index}>
+                <FontAwesomeIcon icon="graduation-cap"/>      
+                  <div className="description">
+                    <h5>{item.name}</h5>
+                    <h6>{item.school}</h6>
+                    <h6>{item.year}</h6>
+                    <hr/>
+                  </div>
+              </Fade>
             </div>
           )
         })}
