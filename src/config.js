@@ -100,9 +100,29 @@ module.exports = {
       tags: [
         "JavaScript",
       ],
-      url: "coming soon",
+      url: "https://scirocco21.github.io/js-project-memory-game/",
       imgName: "voynich.jpg"
+    }, 
+    {
+      name: "Bug Runner",
+      desc: "Arcade Game using HTML Canvas and JavaScript",
+      tags: [
+        "JavaScript"
+      ], 
+      url: "https://scirocco21.github.io/oo-js-arcade-game/",
+      imgName: "arcade-game.jpg"
+    }, 
+    {
+      name: "DoubleCheck",
+      desc: "React/Rails interface for Watson API, with Redux state management",
+      tags: [
+        "React",
+        "Rails"
+      ],
+      url: "https://doublecheck-react-rails-app.herokuapp.com/",
+      imgName: "doublecheck.jpg"
     }
+
   ],
   filters: [
     "All",
