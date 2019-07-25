@@ -140,20 +140,62 @@ module.exports = {
     "JavaScript"
   ],
   skills: [
-    "react",
-    "javascript",
-    "jquery",
-    "nodejs",
-    "npm",
-    "ruby",
-    "ror",
-    "sqllite",
-    "html5",
-    "css3",
-    "bootstrap",
-    "sass",
-    "git",
-    "heroku"
+    {
+      name: "React",
+      iconRef: "react"
+    },
+    {
+      name: "Javascript",
+      iconRef: "javascript"
+    },
+    {
+      name: "JQuery",
+      iconRef: "jquery"
+    },
+    {
+      name: "Node.js",
+      iconRef: "nodejs"
+    },
+    {
+      name: "NPM",
+      iconRef: "npm"
+    },
+    {
+      name: "Ruby",
+      iconRef: "ruby"
+    },
+    {
+      name: "Ruby on Rails",
+      iconRef: "ror"
+    },
+    {
+      name: "SQLite",
+      iconRef: "sqllite"
+    },
+    {
+      name: "HTML",
+      iconRef: "html5"
+    },
+    {
+      name: "CSS",
+      iconRef: "css3"
+    }, 
+    {
+      name: "Bootstrap",
+      iconRef: "bootstrap"
+    },
+    {
+      name: "SASS",
+      iconRef: "sass"
+    },
+    {
+      name: "Git",
+      iconRef: "git"
+    },
+    {
+      name: "Heroku",
+      iconRef: "heroku"
+    }
   ],
   experience: [
     {
