@@ -13,37 +13,42 @@ export default class About extends React.Component {
     return(
       <div style={{padding: '0 40px 40px 40px'}}>
         <Head title="About"></Head>
-        <div className="intro-info">
+
+        <section className="intro">
           <h1 style={{textAlign: "left"}}>About</h1>
-          {/* <h1>A little bit about myself</h1> */}
           <div id="personal">
-            <p className="lead"><em>I came to web development from a previous career teaching Ancient Greek philosophy and logic (you can find my academic work <a href="https://independent.academia.edu/SebastianGertz1" target="_blank" rel="noopener noreferrer">here</a>). Coding combines my love for problem-solving with my desire to have a tangible impact through my work. I thrive on new challenges and am always seeking to expand my skill set by learning new technologies and frameworks.</em></p>
-          </div>
-          <img src={selfie} alt="Profile Picture" id="selfie"/>
-          <div id="skills" style={{marginTop: "5rem"}}>
-            <h3>Skills</h3>
+              <p className="lead"><em>I came to web development from a previous career teaching Ancient Greek philosophy and formal logic (you can find my academic work <a href="https://independent.academia.edu/SebastianGertz1" target="_blank" rel="noopener noreferrer">here</a>). I especially enjoy working with React and reasoning through the flow of data from front to backend.</em></p>
+              <img src={selfie} alt="Profile Picture" id="selfie"/>
+            </div>
+          </section>
+          
+          <section id="skills" style={{backgroundColor: "#f9f9f9", padding: "20px", marginTop: "20px", boxShadow: "-3px 18px 36px -21px rgba(0,0,0,0.7)", borderRadius: "15px"}}>
+            <h2 className="subheading-resume">SKILLS</h2>
+            <hr style={{width: "60%", borderTop: "2px solid #e83e8c"}}></hr>
             <ul id="skill-icons">
               {config.skills.map((skill, index) => {
                 return (
                   <Fade key={index}>
-                    <li key={index} title={skill}>
-                      <DevIcon icon={skill} style={{width: "5rem"}}/>
+                    <li key={index} title={skill.name}>
+                      <DevIcon icon={skill.iconRef} style={{width: "5rem"}}/>
+                      <p>{skill.name}</p>
                     </li>
                   </Fade>
                 )
               })}
             </ul>
-          </div>
-        </div>
+          </section>
+      
 
-      <div id="resume">
-        <div id="work-experience">
-          <h4>Work Experience</h4>
-          {config.experience.map((item,index) => {
-            return (
+        <section id="resume">
+          <div id="work-experience">
+            <h2 className="subheading-resume">WORK EXPERIENCE</h2>
+            <hr style={{width: "60%", borderTop: "2px solid #e83e8c"}}></hr>
+            {config.experience.map((item,index) => {
+              return (
                 <div className="resume-item" key={index}>
-                  <Fade key={index}>
-                    <FontAwesomeIcon icon="briefcase"/>
+                  <Fade key={index}> 
+                      <FontAwesomeIcon icon="briefcase"/>
                     <div className="description"> 
                       <h5>{item.title}</h5>
                       <h6>{item.employer}</h6>
@@ -52,29 +57,30 @@ export default class About extends React.Component {
                     </div>
                   </Fade>
                 </div>
+              )
+            })}
+          </div>
+        </section>
+
+      <section id="education" style={{backgroundColor: "#f9f9f9", padding: "20px", marginTop: "20px", boxShadow: "-3px 18px 36px -21px rgba(0,0,0,0.7)", borderRadius: "15px"}}>
+        <h2 className="subheading-resume">EDUCATION</h2>
+        <hr style={{width: "60%", borderTop: "2px solid #e83e8c"}}></hr>
+          {config.education.map((item, index) => {
+            return (
+              <div className="resume-item" key={index}>
+                <Fade key={index}>
+                  <FontAwesomeIcon icon="graduation-cap"/>      
+                    <div className="description">
+                      <h5>{item.name}</h5>
+                      <h6>{item.school}</h6>
+                      <h6>{item.year}</h6>
+                      <hr/>
+                    </div>
+                </Fade>
+              </div>
             )
           })}
-        </div>
-      </div>
-
-  	<div id="education">
-      <h4>Education</h4>
-        {config.education.map((item, index) => {
-          return (
-            <div className="resume-item" key={index}>
-              <Fade key={index}>
-                <FontAwesomeIcon icon="graduation-cap"/>      
-                  <div className="description">
-                    <h5>{item.name}</h5>
-                    <h6>{item.school}</h6>
-                    <h6>{item.year}</h6>
-                    <hr/>
-                  </div>
-              </Fade>
-            </div>
-          )
-        })}
-      </div>
+        </section>
     </div>
     )
   }

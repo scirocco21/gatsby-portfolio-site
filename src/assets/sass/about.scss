@@ -14,14 +14,6 @@
   margin-bottom: 45px;
 }
 
-#resume > h4 {
-  font-size: 36;
-  text-align: center;
-  letter-spacing: 0.1em;
-  color: #e83e8c;
-  padding-top: 60px;
-}
-
 div.resume-item {
   font-size: 1.5rem;
   margin-top: 25px;
@@ -40,7 +32,7 @@ div.description {
 }
 
 div.description > hr {
-  background-color: #e83e8c;
+  background-color: rgb(235, 235, 235);
   width: 170px;
   float: left;
   height: 2px;
@@ -67,5 +59,18 @@ img#selfie {
   height: 8rem;
   width: 8rem;
   border-radius: 15px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
 }
 
+.subheading-resume {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 599px) {
+  div#personal {
+    justify-content: center;
+  }
+}
