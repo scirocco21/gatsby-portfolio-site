@@ -28,7 +28,7 @@ const BlogPage = () => {
   return  (
     <>
       <Head title="Blog" />
-      <div style={{textAlign: 'left', padding: '0 40px 40px 40px'}}>
+      <div style={{padding: '0 40px 40px 40px'}}>
         
         <h1>Blog</h1>
           <ul style={{listStyle: 'none', padding: '0',margin: '0'}}>

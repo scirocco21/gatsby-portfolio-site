@@ -80,7 +80,7 @@ class Portfolio extends React.Component {
       <>
         <Head title="Portfolio" />
         <section style={{padding: '0 40px 40px 40px'}}>
-          <h1 style={{textAlign: 'left'}}>Portfolio</h1>
+          <h1>Portfolio</h1>
           <h6>
             <ul style={{textAlign: 'center'}}>
               {filters}
