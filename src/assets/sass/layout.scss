@@ -1,6 +1,21 @@
 @import 'base_styles';
 @import 'sidebar';
 
+// Customize scrollbar
+body::-webkit-scrollbar {
+  width: 1.75em;
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: 12px 9px 61px 9px rgba(0,0,0,0.67);
+  -moz-box-shadow: 12px 9px 61px 9px rgba(0,0,0,0.67);
+  box-shadow: 12px 9px 61px 9px rgba(0,0,0,0.67);
+  background-color: rgb(1,2,3);
+}
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to right bottom, #010203, #1f253b, #563c68, #a24c80, #ed5f7b);
+  border-radius: 25px;
+}
+
 html {
   // font-family: $primary;
   -ms-text-size-adjust: 100%;
