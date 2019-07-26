@@ -29,17 +29,17 @@ img#selfie {
   font-size: 1.5rem;
   margin-top: 3rem;
 }
-
 @media only screen and (min-width: 1170px) {
   .vertical-timeline-element-date {
     text-align: center!important;
   }
 }
-@media only screen and (max-width: 960px) {
-  .icon {
-    width: 24px!important;
-  }
-}
 .vertical-timeline {
   margin-bottom: 0!important;
+}
+.education-path {
+  fill: white;
+}
+.work-path {
+  fill: white;
 }
