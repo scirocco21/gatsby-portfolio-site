@@ -18,12 +18,23 @@ export default class Home extends React.Component {
         </li>
       }
      )
+
+     const styles = {
+      width: '100%', 
+      minHeight: '100vh',
+      backgroundPosition: 'bottom center',
+      backgroundRepeat: 'repeat-y',
+      backgroundSize: 'cover',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+     }
      
     return(
     <>
       <Head title="Home" />
       <div style={{position: 'relative', zIndex: 1}}>
-        <BackgroundSection imgName={backgroundImage}>
+        <BackgroundSection imgName={backgroundImage} styles={styles}>
           <div id="overlay-main" className='scale-in-center'>
             <div id="text-container-main">
               <h1 id="intro-text-main" style={{ fontSize:"2.5rem", lineHeight: '1.3'}}>Sebastian Gertz</h1>             
