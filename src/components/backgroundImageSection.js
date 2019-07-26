@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 
 import BackgroundImage from 'gatsby-background-image'
 
-const BackgroundSection = ({ className, children, imgName }) => (
+const BackgroundSection = ({ styles, children, imgName }) => (
     <StaticQuery query={graphql`
       query {
         allImageSharp {
@@ -32,14 +32,7 @@ const BackgroundSection = ({ className, children, imgName }) => (
             // className={className}
             fluid={image.node.fluid}
             style={{  
-              width: '100%', 
-              minHeight: '100vh',
-              backgroundPosition: 'bottom center',
-              backgroundRepeat: 'repeat-y',
-              backgroundSize: 'cover',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
+              ...styles
             }}
           >{children}</BackgroundImage>
        )
