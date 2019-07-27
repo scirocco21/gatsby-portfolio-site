@@ -19,6 +19,7 @@ const BlogPage = () => {
                 ...GatsbyContentfulFluid
               }
             }
+            tag
           }
         }
       }
@@ -48,7 +49,11 @@ const BlogPage = () => {
                         <div style={{ flex: '1 1 auto', paddingLeft: '10px', paddingRight: '10px'}}>
                           <h3>{edge.node.title}</h3>
                           <p>{edge.node.publishedDate}</p>
+                          {edge.node.tag.map(tag => {
+                          return <button style={{backgroundColor: "black", color: "white", padding: "2px 12x 2px 12px", fontSize: "12px"}}>{tag}</button>
+                        })}
                         </div>
+                       
                       </div>
                     </Link>
                   </li>
