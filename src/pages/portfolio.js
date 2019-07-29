@@ -19,15 +19,11 @@ class Portfolio extends React.Component {
     if (filter === "All") {
         this.setState({
           projects: config.projects,
-      }, () => setTimeout(this.shuffleList, 500))
+      })
     } else {
       let filteredProjects = config.projects.filter(project => project.tags.includes(filter))
       this.setState({
         projects: filteredProjects,
-      }, () =>  {
-        if (this.state.projects.length > 2) {
-          setTimeout(this.shuffleList, 500)
-        }
       })
     }
   }
@@ -65,7 +61,7 @@ class Portfolio extends React.Component {
   }
  
   render() {
-    const filters = config.filters.map((filter, index) => {
+    const filters = config.projectFilters.map((filter, index) => {
       return <li key={index} style={{display: 'inline-block', marginRight:'20px'}}>
         <button 
           className={this.state.activeFilter === filter ? "filter-active" : "normal"} 
@@ -88,7 +84,6 @@ class Portfolio extends React.Component {
           </h6>
           <ProjectList 
             projects={this.state.projects} 
-            shuffleList={this.shuffleList} 
             toggleModal={this.toggleModal} 
             updateProject={this.updateProject}
           />
@@ -118,9 +113,9 @@ class Portfolio extends React.Component {
             </ul> 
             <button
               onClick={() => this.toggleModal()} 
-              style={{position:'absolute', backgroundColor: "white", top:'0', right: '5px', textDecoration: 'none', margin: "0", padding: "0", border: "none"}}
+              style={{position:'absolute', backgroundColor: "white", top:'0px', right: '10px', textDecoration: 'none', margin: "0", padding: "0", border: "none"}}
             >
-              <h1 style={{margin: '0', color: 'black', fontSize: "24px"}}>&times;</h1>
+              <h1 style={{margin: '0', color: 'black', fontSize: "36px"}}>&times;</h1>
             </button>
           </div>
         </Modal>
