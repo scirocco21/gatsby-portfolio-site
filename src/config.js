@@ -53,7 +53,8 @@ module.exports = {
         "Foursquare API"
       ],
       url: "https://nyc-museums-explorer.herokuapp.com",
-      imgName: "museums-explorer.jpg"
+      imgName: "museums-explorer.jpg",
+      github: "https://github.com/scirocco21/react-neighbourhood-app"
     },
     {
       name: "DoubleCheck",
@@ -63,7 +64,8 @@ module.exports = {
         "Rails"
       ],
       url: "https://doublecheck-react-rails-app.herokuapp.com/",
-      imgName: "doublecheck.png"
+      imgName: "doublecheck.png",
+      github: "https://github.com/scirocco21/doublecheck-react-app"
     },
     {
       name: "Coinopoly",
@@ -73,7 +75,8 @@ module.exports = {
         "JavaScript"
       ],
       url: "https://coinopoly.herokuapp.com",
-      imgName: "coinopoly.jpg"
+      imgName: "coinopoly.jpg",
+      github: "https://github.com/scirocco21/coinopoly-rails-app-with-js-frontend"
     },
     {
       name: "Biblio",
@@ -83,7 +86,8 @@ module.exports = {
         "Ruby"
       ],
       url: "https://biblio-sinatra-app.herokuapp.com/",
-      imgName: "biblio.jpg"
+      imgName: "biblio.jpg",
+      github: "https://github.com/scirocco21/biblio-app"
     },
     {
       name: "MyReads",
@@ -92,7 +96,8 @@ module.exports = {
         "React"
       ],
       url: "https://myreads-bookshelf-app.herokuapp.com/",
-      imgName: "myReads.jpg"
+      imgName: "myReads.jpg",
+      github: "https://github.com/scirocco21/myreads-react-project"
     },
     // {
     //   name: "Pixabay Viewer",
@@ -111,7 +116,8 @@ module.exports = {
         "JavaScript",
       ],
       url: "https://scirocco21.github.io/js-project-memory-game/",
-      imgName: "voynich.jpg"
+      imgName: "voynich.jpg",
+      github: "https://github.com/scirocco21/js-project-memory-game"
     }, 
     {
       name: "Bug Runner",
@@ -120,7 +126,8 @@ module.exports = {
         "JavaScript"
       ], 
       url: "https://scirocco21.github.io/oo-js-arcade-game/",
-      imgName: "arcade-game.jpg"
+      imgName: "arcade-game.jpg",
+      github: "https://github.com/scirocco21/oo-js-arcade-game"
     }, 
     {
       name: "Pixel Painter",
@@ -129,15 +136,29 @@ module.exports = {
         "JavaScript"
       ],
       url: "https://scirocco21.github.io/pixel-painter",
-      imgName: "pixel-painter.png"
+      imgName: "pixel-painter.png",
+      github: "https://github.com/scirocco21/pixel-painter"
     }
-
   ],
-  filters: [
+  projectFilters: [
     "All",
     "React",
     "Ruby",
     "JavaScript"
+  ],
+  blogFilters: [
+    {
+      name: "All",
+      iconRef: "list-alt"
+    },
+    {
+      name: "JavaScript",
+      iconRef: ["fab", "js"]
+    },
+    {
+      name: "Coding Challenge",
+      iconRef: "puzzle-piece"
+    }
   ],
   skills: [
     {
