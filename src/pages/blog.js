@@ -1,77 +1,99 @@
 import React from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { StaticQuery, graphql, Link } from "gatsby"
 import Img from 'gatsby-image';
 import "../assets/sass/blog.scss"
 import Head from "../components/head"
 import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../assets/sass/filterbutton.scss'
+import config from '../config.js'
+import BlogList from '../components/BlogList.js'
 
-const BlogPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulBlogPost (sort: { fields: publishedDate, order: DESC}) {
-        edges {
-          node {
-            title 
-            slug
-            publishedDate(formatString: "MMMM Do, YYYY")
-            heroImage {
-              fluid {
-                ...GatsbyContentfulFluid
+class BlogPage extends React.Component {
+  state = {
+    posts: this.props.posts,
+    activeFilter: "All",
+  }
+  handleSelection = (filter) => {
+    let posts = this.props.posts
+    if (filter === "All") {
+        this.setState({
+          posts: posts
+      })
+    } else {
+      let filteredPosts = posts.filter(post => post.node.tag.includes(filter))
+      this.setState({
+        posts: filteredPosts,
+      })
+    }
+  }
+  setFilter = (filter) => {
+    this.setState({
+      activeFilter: filter
+    })
+  }
+  handleClick = async (filter) => {
+    await this.setFilter(filter);
+    await this.handleSelection(filter);
+  }
+  render(props) {
+    const filters = config.blogFilters.map((filter, index) => {
+      return <li key={index} style={{display: 'inline-block', marginRight:'20px'}}>
+        <button 
+          className={this.state.activeFilter === filter.name ? "filter-active" : "normal"} 
+          value={filter.name} 
+          onClick={event => this.handleClick(event.currentTarget.value)}
+        >
+          <span style={{marginRight: "5px"}}><FontAwesomeIcon icon={filter.iconRef}/></span>{filter.name}
+        </button>
+      </li>
+    })
+    return (
+      <>
+        <Head title="Blog" />
+        <div style={{padding: '0 40px 40px 40px'}}>
+          <h1>Blog</h1>
+          <h6>
+              <ul style={{textAlign: 'center'}}>
+                {filters}
+              </ul>
+            </h6>
+           <BlogList 
+              posts={this.state.posts} 
+              activeFilter={this.state.activeFilter}
+              handleSelection={this.handleSelection}
+              setFilter={this.setFilter}
+              handleClick={this.handleClick}
+            />
+        </div>
+      </>
+    )  
+  }
+}
+
+export default (props) => {
+  return <StaticQuery
+    query={graphql`
+      query {
+        allContentfulBlogPost (sort: { fields: publishedDate, order: DESC}) {
+          edges {
+            node {
+              title 
+              slug
+              publishedDate(formatString: "MMMM Do, YYYY")
+              heroImage {
+                fluid {
+                  ...GatsbyContentfulFluid
+                }
               }
+              tag
             }
-            tag
           }
         }
       }
-    }
-  `)
-
-  return  (
-    <>
-      <Head title="Blog" />
-      <div style={{padding: '0 40px 40px 40px'}}>
-        
-        <h1>Blog</h1>
-          <ul style={{listStyle: 'none', padding: '0',margin: '0'}}>
-            {data.allContentfulBlogPost.edges.map((edge, index) => {
-              return (
-                <Fade bottom key={index}>
-                  <li 
-                    style={{marginBottom: '15px'}} 
-                    className="card-container"
-                    key={index}
-                  >
-                    <Link to={`/blog/${edge.node.slug}`}>
-                      <div className="blog-card" style={{display: 'flex', alignContent: 'center', alignItems: 'center', border: '1px solid #D3D3D3', borderRadius: '5px', boxShadow: '0px 0px 1px 1px #D3D3D3	'}}>
-                        <div className="image-container">
-                          <Img fluid={edge.node.heroImage.fluid} style={{alignSelf: 'flex-start'}}/>
-                        </div>
-                        <div style={{ flex: '1 1 auto', paddingLeft: '10px', paddingRight: '10px'}}>
-                          <h3>{edge.node.title}</h3>
-                            <div style={{textAlign: 'left'}}>
-                              <p style={{marginBottom: "5px", marginTop: '5px'}}>
-                                <span style={{marginRight: "10px"}}><FontAwesomeIcon icon="calendar-alt" size="xs"/></span>
-                                {edge.node.publishedDate}
-                              </p>
-                              <p style={{marginTop: "5px", marginBottom: "5px"}}>
-                                <span style={{marginRight: "10px"}}><FontAwesomeIcon icon="tags" size="xs"/></span>
-                                {edge.node.tag.map((tag, index) => {
-                                  return <button key={index} style={{backgroundColor: "black", color: "white", padding: "2px 12x 2px 12px", fontSize: "10px"}}>{tag}</button>
-                                })} 
-                              </p>
-                            </div>
-                        </div>
-                      </div>
-                    </Link>
-                  </li>
-                </Fade>
-              )
-            })}
-          </ul>
-      </div>
-    </>
-  )
-}
-
-export default BlogPage
+      `}
+      render={(data) => {
+        return <BlogPage posts={data.allContentfulBlogPost.edges} {...props}/>
+      }}
+    />
+  }
