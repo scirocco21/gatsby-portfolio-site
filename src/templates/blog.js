@@ -3,9 +3,11 @@ import { graphql,} from "gatsby";
 import Head from '../components/head'
 import Img from "gatsby-image";
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
-import Highlight from 'react-highlight.js'
-import "../assets/monokai.css"
-import "../assets/sass/blog_post.scss"
+import Highlight from 'react-highlight.js';
+import "../assets/monokai.css";
+import "../assets/sass/blog_post.scss";
+import Disqus from 'disqus-react';
+
 
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 export const query = graphql`
@@ -31,6 +33,13 @@ export const query = graphql`
 `
 
 const Blog = (props) => {
+  const disqusShortname = 'sebastiangertz';
+  const disqusConfig = {
+      url: props.data.contentfulBlogPost.slug,
+      identifier: props.data.contentfulBlogPost.slug,
+      title: props.data.contentfulBlogPost.title,
+  };
+
   const Text = ({ children }) => <p style={{fontSize: '1.25rem'}}>{children}</p>;
   const Code = ({children}) => <pre><code>{children}</code></pre>
   const options = {
@@ -68,6 +77,7 @@ const Blog = (props) => {
         </div>  
           {props.data.contentfulBlogPost.heroImage && <Img fluid={props.data.contentfulBlogPost.heroImage.fluid} style={{maxWidth: '70%', height: 'auto'}}/>}
         {documentToReactComponents(props.data.contentfulBlogPost.content.json, options)}
+        <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </div>
     </>
   )
