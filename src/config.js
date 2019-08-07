@@ -13,7 +13,7 @@ module.exports = {
     {
       id: 'twitter',
       name: 'Twitter',
-      url: 'https://twitter.com/cryptocyclops',
+      url: 'https://twitter.com/sebgertz',
     }
   ],
   pages: [
