@@ -5,6 +5,7 @@ import ProjectList from '../components/ProjectList'
 import config from '../config.js'
 import Modal from 'react-awesome-modal'
 import Image from '../components/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../assets/sass/filterbutton.scss'
 
 class Portfolio extends React.Component {
@@ -104,9 +105,20 @@ class Portfolio extends React.Component {
               {this.state.project.tags.map((tag,index) => {
                 return <li 
                   key={index} 
-                  style={{marginBottom: '5px'}}
+                  style={{margin: '5px', display: "inline-block"}}
                 >
-                  <span className="tag">{tag}</span>
+                  <button 
+                    onClick={() => {
+                      this.handleClick(tag);
+                      this.toggleModal();
+                    }}
+                    className={this.state.activeFilter === tag ? "filter-active" : "normal"} 
+                  >
+                    <span style={{marginRight: "5px"}}>
+                      <FontAwesomeIcon icon="tag"/>
+                    </span>
+                    {tag}
+                  </button>
                 </li>
                 })
               }
