@@ -12,7 +12,6 @@ export default class Project extends React.Component {
   render() {
     const project = this.props.projectData
     return (    
-      <>
       <div className="square" onClick={() => this.handleClick(project)}>
         <Image imgName={project.imgName} />
         <div id="overlay" style={{color: 'white'}}>
@@ -22,7 +21,6 @@ export default class Project extends React.Component {
           </div>
         </div>
       </div>
-      </>
     )
   }
 }
