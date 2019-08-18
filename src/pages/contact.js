@@ -24,7 +24,8 @@ class Contact extends React.Component {
   
   render() {
     return (
-      <Head title="Contact">
+      <>
+        <Head title="Contact"/>
         <BackgroundSection imgName={backgroundImage} styles={styles}>
           <div style={{padding: "20px"}}>
             <h1 style={{paddingRight: "20px"}}>Contact</h1> 
@@ -101,7 +102,7 @@ class Contact extends React.Component {
             </div>
           </div>
         </BackgroundSection>
-      </Head>
+      </>
     )
   }
 }
