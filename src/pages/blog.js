@@ -1,9 +1,7 @@
 import React from 'react';
-import { StaticQuery, graphql, Link } from "gatsby"
-import Img from 'gatsby-image';
+import { StaticQuery, graphql} from "gatsby"
 import "../assets/sass/blog.scss"
 import Head from "../components/head"
-import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../assets/sass/filterbutton.scss'
 import config from '../config.js'
