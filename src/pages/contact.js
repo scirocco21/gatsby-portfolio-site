@@ -52,13 +52,13 @@ class Contact extends React.Component {
                           <input name="bot-field"/>
                         </label>
                       </p>
-                      <input  type="text" name="name" maxLength="100" size="60" placeholder="Name"/>
+                      <input  type="text" name="name" maxLength="100" minLength="2" size="60" placeholder="Name"/>
                       <br/>
-                      <input  type="text" name="email" maxLength="100" size="60" placeholder="you@email.com"/>
+                      <input  type="text" name="email" maxLength="100" minLength="5" size="60" placeholder="you@email.com"/>
                       <br/>
                       <input type="text" name="subject" maxLength="200" size="60" placeholder="Subject (optional)" />
                       <br></br>
-                      <textarea  name="message" maxLength="2000" cols="6" rows="9" placeholder="Your message goes here..."></textarea>
+                      <textarea  name="message" minLength="10" maxLength="2000" cols="6" rows="9" placeholder="Your message goes here..."></textarea>
                       <br></br>
                       
                         <button style={{position: 'relative', marginTop: '17px', padding: '20px', borderRadius: '50%', backgroundColor: 'rgba(225, 225, 225, 0)', border: '4px solid black',boxShadow: "0px 0px 1px 2px rgba(0,0,0,0.75)"}} type="submit" value="Submit">
