@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import config from '../config.js'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import pageConfig from '../config.js'
 import logo from '../images/logo.svg'
+
+config.autoAddCss = false
+
 
 export default class Sidebar extends React.Component {
   render() {
     const isPartiallyActive = ({ isPartiallyCurrent }) => isPartiallyCurrent ? { className: "nav-item active" } : {className: 'nav-item'};
-    const pagesList = config.pages.map((page, index) => {
+    const pagesList = pageConfig.pages.map((page, index) => {
       return (
         <Link 
           key={index}
@@ -20,6 +24,7 @@ export default class Sidebar extends React.Component {
             <FontAwesomeIcon 
               icon={page.icon}
             />
+
             <h4 style={{ margin: '0', padding: '0', fontFamily: "bebas-kai", letterSpacing: '0.5px'}}>{page.title}</h4>            
           </li>
         </Link>    
