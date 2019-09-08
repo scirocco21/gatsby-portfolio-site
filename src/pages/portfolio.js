@@ -100,7 +100,14 @@ class Portfolio extends React.Component {
             <h1 style={{fontSize: '33px'}}>{this.state.project.name}</h1>
             <Image imgName={this.state.project.imgName} />
             <p style={{fontSize: '20px'}}>{this.state.project.desc}</p>
-            <button style={{backgroundColor: 'black', color: 'white', marginBottom: '15px', padding: '0 5px 0 5px'}}><h4 style={{margin: '5px 10px 5px 10px', fontFamily: 'bebas-kai', fontSize: '18px'}}><a href={this.state.project.url} target="_blank" rel='noopener noreferrer' style={{textDecoration: 'none', color: 'white'}}>View</a></h4></button>
+            <button style={{backgroundColor: 'black', color: 'white', marginBottom: '15px', padding: '0 5px 0 5px'}}><h4 style={{margin: '5px 10px 5px 10px', fontFamily: 'bebas-kai', fontSize: '18px'}}><a href={this.state.project.url} target="_blank" rel='noopener noreferrer' style={{textDecoration: 'none', color: 'white'}}>View</a></h4>
+            </button>
+            <br></br>
+            <button style={{borderRadius: "50%", padding: '10px', backgroundColor: "white", boxShadow: "0px 0px 1px 2px rgba(0,0,0,0.75)"}}>
+              <a href={this.state.project.github} target="_blank" rel='noopener noreferrer'>
+                <FontAwesomeIcon icon={["fab","github"]} size="lg" style={{color: 'black'}}/>
+              </a>
+            </button>
             <ul style={{display: "flex", justifyContent: "center", flexWrap: "wrap", padding: "0"}}>
               {this.state.project.tags.map((tag,index) => {
                 return <li 
