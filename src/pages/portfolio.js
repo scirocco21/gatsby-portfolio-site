@@ -17,13 +17,26 @@ const CloseButton = (props) => (
 
 const StyledCloseButton = styled(CloseButton)`
   position: absolute;
-  backgroundColor: white;
+  background-color: white;
   top: 0px;
   right: 10px;
-  textDecoration: none;
+  text-decoration: none;
   margin: 0; 
   padding: 0; 
   border: none;
+`
+const ViewButton = props => (
+  <button className={props.className}>
+    <a href={props.project.url} target="_blank" rel='noopener noreferrer' style={{textDecoration: 'none', color: 'white'}}>
+        {props.children}
+    </a>
+  </button>
+)
+
+const StyledViewButton = styled(ViewButton)`
+  background-color: black;
+  color: white;
+  margin-bottom: 15px;
 `
 
 class Portfolio extends React.Component {
@@ -83,7 +96,7 @@ class Portfolio extends React.Component {
     const filters = config.projectFilters.map((filter, index) => {
       return <li key={index} style={{display: 'inline-block', marginRight:'20px'}}>
         <button 
-          className={this.state.activeFilter === filter ? "filter-active" : "normal"} 
+          className={this.state.activeFilter === filter ? "filter filter-active" : "filter normal"} 
           value={filter} 
           onClick={event => this.handleClick(event.currentTarget.value)}
         >
@@ -118,8 +131,11 @@ class Portfolio extends React.Component {
             <h1 style={{fontSize: '33px'}}>{this.state.project.name}</h1>
             <Image imgName={this.state.project.imgName} />
             <p style={{fontSize: '20px'}}>{this.state.project.desc}</p>
-            <button style={{backgroundColor: 'black', color: 'white', marginBottom: '15px', padding: '0 5px 0 5px'}}><h4 style={{margin: '5px 10px 5px 10px', fontFamily: 'bebas-kai', fontSize: '18px'}}><a href={this.state.project.url} target="_blank" rel='noopener noreferrer' style={{textDecoration: 'none', color: 'white'}}>View</a></h4>
-            </button>
+            <StyledViewButton project={this.state.project}>
+              <h4 style={{margin: '5px 10px 5px 10px', fontFamily: 'bebas-kai', fontSize: '16px'}}>
+                View
+              </h4>
+            </StyledViewButton>
             <br></br>
             <button style={{borderRadius: "50%", padding: '10px', backgroundColor: "white", boxShadow: "0px 0px 1px 2px rgba(0,0,0,0.75)"}}>
               <a href={this.state.project.github} target="_blank" rel='noopener noreferrer'>
@@ -137,7 +153,7 @@ class Portfolio extends React.Component {
                       this.handleClick(tag);
                       this.toggleModal();
                     }}
-                    className={this.state.activeFilter === tag ? "filter-active" : "normal"} 
+                    className={this.state.activeFilter === tag ? "filter filter-active" : "filter normal"} 
                   >
                     <span style={{marginRight: "5px"}}>
                       <FontAwesomeIcon icon="tag"/>
