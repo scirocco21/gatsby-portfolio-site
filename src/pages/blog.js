@@ -3,9 +3,13 @@ import { StaticQuery, graphql} from "gatsby"
 import "../assets/sass/blog.scss"
 import Head from "../components/head"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { config } from '@fortawesome/fontawesome-svg-core' // 👈
+import '@fortawesome/fontawesome-svg-core/styles.css' // 👈
 import '../assets/sass/filterbutton.scss'
-import config from '../config.js'
+import pageConfig from '../config.js'
 import BlogList from '../components/BlogList.js'
+
+config.autoAddCss = false // 👈
 
 class BlogPage extends React.Component {
   state = {
@@ -35,7 +39,7 @@ class BlogPage extends React.Component {
     await this.handleSelection(filter);
   }
   render(props) {
-    const filters = config.blogFilters.map((filter, index) => {
+    const filters = pageConfig.blogFilters.map((filter, index) => {
       return <li key={index} style={{display: 'inline-block', marginRight:'20px'}}>
         <button 
           className={this.state.activeFilter === filter.name ? "filter-active" : "normal"} 
