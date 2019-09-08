@@ -1,12 +1,19 @@
 import React from "react";
 import Head from '../components/head'
 import "../assets/sass/about.scss"
-import DevIcon, {iconList} from "devicon-react-svg";
+import DevIcon from "devicon-react-svg";
 import config from "../config.js"
 import Fade from 'react-reveal/Fade';
 import selfie from "../images/selfie.jpg";
+import Image from "../components/image.js";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import '../assets/external/style.min.css';
+
+const styles = {
+  height: '8rem',
+  width: '8rem',
+  borderRadius: '15px',
+}
 
 export default class About extends React.Component {  
   render() {
@@ -22,7 +29,9 @@ export default class About extends React.Component {
             <h1>About</h1>
             <div id="personal">
                 <p><em>I came to web development from a previous career teaching Ancient Greek philosophy and formal logic (you can find my academic work <a href="https://independent.academia.edu/SebastianGertz1" target="_blank" rel="noopener noreferrer">here</a>). I especially enjoy working with React and reasoning through the flow of data from front to backend.</em></p>
-                <img src={selfie} alt="Sebastian Gertz" id="selfie"/>
+              </div>
+              <div style={{display: 'flex', justifyContent: 'center'}}>
+                <Image imgName={"selfie.jpg"} styles={styles}/>
               </div>
             </section>
           </div>
@@ -59,9 +68,6 @@ export default class About extends React.Component {
                   >
                     <h3 className="vertical-timeline-element-title">{item.title}</h3>
                     <h5 className="vertical-timeline-element-subtitle">{item.employer}</h5>
-                    {/* <p>
-                      Creative Direction, Visual Design
-                    </p> */}
                   </VerticalTimelineElement>
                 )
               })}
@@ -83,9 +89,6 @@ export default class About extends React.Component {
                 >
                   <h3 className="vertical-timeline-element-title">{item.name}</h3>
                   <h5 className="vertical-timeline-element-subtitle">{item.school}</h5>
-                  {/* <p> */}
-                    {/* Creative Direction, Visual Design */}
-                  {/* </p> */}
                 </VerticalTimelineElement>
               )
             })}
