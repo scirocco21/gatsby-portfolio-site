@@ -5,8 +5,26 @@ import ProjectList from '../components/ProjectList'
 import config from '../config.js'
 import Modal from 'react-awesome-modal'
 import Image from '../components/image'
+import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../assets/sass/filterbutton.scss'
+
+const CloseButton = (props) => (
+  <button className={props.className} onClick={()=> props.toggleModal()}>
+    {props.children}
+  </button>
+)
+
+const StyledCloseButton = styled(CloseButton)`
+  position: absolute;
+  backgroundColor: white;
+  top: 0px;
+  right: 10px;
+  textDecoration: none;
+  margin: 0; 
+  padding: 0; 
+  border: none;
+`
 
 class Portfolio extends React.Component {
   state = {
@@ -130,12 +148,9 @@ class Portfolio extends React.Component {
                 })
               }
             </ul> 
-            <button
-              onClick={() => this.toggleModal()} 
-              style={{position:'absolute', backgroundColor: "white", top:'0px', right: '10px', textDecoration: 'none', margin: "0", padding: "0", border: "none"}}
-            >
+            <StyledCloseButton toggleModal={this.toggleModal}>
               <h1 style={{margin: '0', color: 'black', fontSize: "36px"}}>&times;</h1>
-            </button>
+            </StyledCloseButton>
           </div>
         </Modal>
       </>
