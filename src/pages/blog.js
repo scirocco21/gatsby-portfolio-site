@@ -42,7 +42,7 @@ class BlogPage extends React.Component {
     const filters = pageConfig.blogFilters.map((filter, index) => {
       return <li key={index} style={{display: 'inline-block', marginRight:'20px'}}>
         <button 
-          className={this.state.activeFilter === filter.name ? "filter-active" : "normal"} 
+          className={this.state.activeFilter === filter.name ? "filter filter-active" : "filter normal"} 
           value={filter.name} 
           onClick={event => this.handleClick(event.currentTarget.value)}
         >
