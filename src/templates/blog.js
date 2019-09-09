@@ -9,6 +9,7 @@ import "../assets/sass/blog_post.scss";
 import Disqus from 'disqus-react';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {getReadTime} from '../utils/readTime';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const query = graphql`
   query($slug: String!) {
@@ -71,8 +72,12 @@ const Blog = (props) => {
         <div>
           <div>
             <h1>{props.data.contentfulBlogPost.title}</h1>
-            <p>{props.data.contentfulBlogPost.publishedDate}</p>
-            <p>{getReadTime(props.data.contentfulBlogPost.content.json)}</p>
+              <p>
+                <FontAwesomeIcon icon="calendar" style={{marginRight: "10px"}}/>{props.data.contentfulBlogPost.publishedDate}
+                <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
+                <FontAwesomeIcon icon="clock" style={{marginRight: "10px"}}/>
+                {getReadTime(props.data.contentfulBlogPost.content.json)}
+            </p>
             {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
           </div>
         </div>  
