@@ -31,7 +31,7 @@ export default class BlogList extends React.Component {
                         <p style={{marginTop: "5px", marginBottom: "5px"}}>
                           <span style={{marginRight: "10px"}}><FontAwesomeIcon icon="tags" size="xs"/></span>
                           {edge.node.tag.map((tag, index) => {
-                            return <button key={index} className={this.props.activeFilter === tag ? "filter-active" : "normal"} value={tag}
+                            return <button key={index} className={this.props.activeFilter === tag ? "filter filter-active" : "filter normal"} value={tag}
                             onClick={event => {
                               event.preventDefault();this.props.handleClick(event.currentTarget.value)
                             }}>{tag}</button>
