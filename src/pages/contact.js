@@ -92,7 +92,7 @@ class Contact extends React.Component {
                           style={{position: 'absolute', left: '-5000px', ariaHidden:'true'}}><input type="text" name="b_b2be08d27a2ce27aa27a77fa0_0dd6f213fa" tabIndex="-1"/>
                           </div>
                           <br/>
-                          <button id="newsletter-signup" type="submit" name="subscribe" id="mc-embedded-subscribe" style={{backgroundColor: "black", color: "white", borderRadius: "8px", padding: "2px 14px 2px 14px", borderCollapse: "collapse"}}><h3 style={{fontSize:"18px"}}>Subscribe</h3></button>
+                          <button id="newsletter-signup mc-embedded-subscribe" type="submit" name="subscribe" style={{backgroundColor: "black", color: "white", borderRadius: "8px", padding: "2px 14px 2px 14px", borderCollapse: "collapse"}}><h3 style={{fontSize:"18px"}}>Subscribe</h3></button>
                         </div>
                     </form>
                   </div>
