@@ -220,6 +220,11 @@ module.exports = {
   ],
   experience: [
     {
+      title: "Mentor for Front End Development Nanodegree",
+      employer: "Udacity",
+      dates: "04/2019 - present"
+    },
+    {
       title: "Java Developer Training",
       employer: "MThree Consulting",
       dates: "02/2019-04/2019"
@@ -236,6 +241,11 @@ module.exports = {
     }
   ],
   education: [
+    {
+      name: "Blockchain Development Bootcamp",
+      school: "ConsenSys",
+      year: "2019"
+    },
     {
       name: "Software Engineering Program",
       school: "Flatiron School",
