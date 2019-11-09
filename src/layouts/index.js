@@ -8,6 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import Footer from './footer.js';
+import '../assets/fonts/BebasKai-Regular.otf'
 
 library.add(fas, fab)
 
