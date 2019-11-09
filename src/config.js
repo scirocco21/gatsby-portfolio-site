@@ -190,6 +190,10 @@ module.exports = {
       iconRef: "ror"
     },
     {
+      name: "Python",
+      iconRef: "python"
+    },
+    {
       name: "SQLite",
       iconRef: "sqllite"
     },
