@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
-@import url("https://use.typekit.net/wrq5gnf.css");
+
+@font-face {
+  font-family: 'bebas-kai';
+  src: local('BebasKai'), url('../fonts/BebasKai-Regular.otf') format('truetype');
+}
 
 // color scheme:
 $turqois: #02E1E4;
