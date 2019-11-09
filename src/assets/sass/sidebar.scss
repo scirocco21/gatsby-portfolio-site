@@ -1,6 +1,29 @@
+aside:hover {
+  width: 200px;
+  nav {
+    .nav-list {
+      .nav-item {
+        li {
+          text-align: left;
+          svg {
+            margin-right: 25px;
+          }
+          h4 {
+            display: inline;
+            text-align: right;
+            opacity: 1;
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
 aside {
-  flex: 1;
-  min-width: 195px;
+  flex: 2;
+  transition: width 1s;
+  width: 120px;
   min-height: 100vh;
   max-height: 100vh;
   color: $red;
@@ -11,21 +34,24 @@ aside {
   position: sticky;
   top: 0;
   background-color: #010203;
-  z-index: 10;
+  min-height: 100vh;
+  z-index: 2;
 
   header {
     flex: 2;
     img {
-      width: 120px;
+      width: 75px;
       padding-top: 20px;
     }
   }
   nav {
     flex: 1;
-    padding: 20px;
+    // padding: 20px;
     .nav-list {
       list-style-type: none;
-      padding: 0;
+      padding:0;
+      width:100%;
+      text-align:center;
       .menu-button {
         visibility: hidden;
       }
@@ -35,16 +61,16 @@ aside {
         color: #C0C0C0;
         text-decoration: none;
         li {
-          margin-bottom: 1.75rem;
-          display: flex;
+          margin-bottom: 20px;
           align-items: center;
           justify-content: space-between;
-          svg {
-            margin-right: 25px;
-          }
+          padding: 0;
+
           h4 {
-            display: flex;
-            text-align: right;
+            font-family: 'bebas-kai';
+            font-size: 0px;
+            opacity: 0;
+            transition: opacity 0.7s;
           }
         }
       }
