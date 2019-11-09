@@ -1,16 +1,14 @@
 @import 'base_styles';
 
-
 @media only screen and (min-width: 100px) and (max-width: 820px) {
-
   nav {
     min-width: 100%;
     flex-direction: row;
     position: sticky;
     top:0;
     z-index: 1;
-    max-height: 100px;
-    min-height: 50px;
+    height: 100px;
+    transition: height 0.7s;
     background-color: rgba(1,2,3,0.9);
   }
   nav.hidden {
@@ -43,8 +41,8 @@
   }
 
   nav.show {
-    max-height: 580px;
-    min-height: 50px;
+    height: 480px;
+    transition: height 0.7s;
     display: flex;
     align-items: center;
     flex-direction: column;
