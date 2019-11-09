@@ -15,14 +15,18 @@ library.add(fas, fab)
 class Layout extends React.Component {
   render() {
     return(
-      <div id="main-container" style={{display: 'flex'}}>
-        <NavBar siteTitle={this.props.title}/>
-        <Sidebar siteTitle={this.props.title}/>
-        <div className="container">
-          <main style={{ flex: 1 }}>{this.props.children}</main>
-          { this.props.location.pathname !== "/" && <Footer /> } 
+      <>
+        <div id="main-container" style={{position: "relative"}}>
+          <NavBar siteTitle={this.props.title}/>
+          <div style={{position: "absolute", height: "100%"}}>
+            <Sidebar siteTitle={this.props.title}/>
+          </div>
+          <div className="container">
+            <main style={{ flex: 1 }}>{this.props.children}</main>
+            { this.props.location.pathname !== "/" && <Footer /> } 
+          </div>
         </div>
-      </div>
+      </>
       )
     }
   }
