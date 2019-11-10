@@ -1,6 +1,5 @@
 module.exports = {
   getReadTime(content) {
-    console.log("I was fired")
     const pattern = '\\w+';
     const reg = new RegExp(pattern, 'g');
     const removables = ['data', 'nodeType', 'value', 'text', 'paragraph', "type", "bold", "code", "heading",'content', 'marks',  'list', 'item', 'italic'];
