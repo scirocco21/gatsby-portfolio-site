@@ -17,7 +17,9 @@ class Layout extends React.Component {
     return(
       <>
         <div id="main-container" style={{position: "relative"}}>
+        <div style={{position: "absolute", width: "100%", height: "100%"}}>
           <NavBar siteTitle={this.props.title}/>
+        </div>
           <div style={{position: "absolute", height: "100%"}}>
             <Sidebar siteTitle={this.props.title}/>
           </div>
