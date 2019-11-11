@@ -7,7 +7,6 @@ import logo from '../images/logo.svg'
 
 config.autoAddCss = false
 
-
 export default class Sidebar extends React.Component {
   render() {
     const isPartiallyActive = ({ isPartiallyCurrent }) => isPartiallyCurrent ? { className: "nav-item active" } : {className: 'nav-item'};
@@ -25,7 +24,7 @@ export default class Sidebar extends React.Component {
               icon={page.icon}
             />
 
-            <h4 style={{ margin: '0', padding: '0', fontFamily: "bebas-kai", letterSpacing: '0.5px'}}>{page.title}</h4>            
+            <h4>{page.title}</h4>            
           </li>
         </Link>    
       )
