@@ -7,18 +7,13 @@ p.legend {
 .portfolio-list  {
   padding: 0;
   list-style: none;
-
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(300px, 2fr) );
-
   -webkit-column-gap: 1em;
   -moz-column-gap: 1em;
   column-gap: 1em;
-   margin: 0em;
-    -moz-column-gap: 1.5em;
-    -webkit-column-gap: 1.5em;
-    column-gap: 1.5em;
-    font-size: .85em;
+  margin: 0em;
+  font-size: .85em;
 }
 
 .square {
