@@ -42,7 +42,7 @@ export default class NavBar extends React.Component {
             <FontAwesomeIcon 
               icon={page.icon}
             />
-            <h4 style={{ margin: '0', padding: '0', fontFamily: "bebas-kai", letterSpacing: '0.5px'}}>{page.title}</h4>            
+            <h4>{page.title}</h4>            
           </li>
       </Link>    
       )
@@ -59,7 +59,7 @@ export default class NavBar extends React.Component {
         </header>
         <div style={{flex: 5}}>
           <ul className="nav-list">
-          {pagesList}
+            {pagesList}
           <li>
             <MenuButton handleClick={this.handleClick} buttonActive={this.state.buttonActive}/>
           </li>
