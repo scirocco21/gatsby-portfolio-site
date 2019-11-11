@@ -41,17 +41,14 @@ const Blog = (props) => {
       title: props.data.contentfulBlogPost.title,
   };
 
-  const Text = ({ children }) => <p style={{fontSize: '1.25rem'}}>{children}</p>;
-  const Code = ({children}) => <pre><code>{children}</code></pre>
+  const Text = ({children}) => <p style={{fontSize: '1.25rem'}}>{children}</p>;
   const options = {
     renderMark: {
       [MARKS.CODE]: code => {
         return (
-          <Code>
             <Highlight language="javascript">
               {code}
             </Highlight>
-          </Code>
         )
       }
     },
@@ -81,7 +78,13 @@ const Blog = (props) => {
             {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
           </div>
         </div>  
-          {props.data.contentfulBlogPost.heroImage && <Img fluid={props.data.contentfulBlogPost.heroImage.fluid} style={{maxWidth: '70%', height: 'auto'}}/>}
+        { 
+          props.data.contentfulBlogPost.heroImage && 
+          <Img 
+            fluid={props.data.contentfulBlogPost.heroImage.fluid} 
+            style={{maxWidth: '70%', height: 'auto'}}
+          />
+        }
         {documentToReactComponents(props.data.contentfulBlogPost.content.json, options)}
         <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </div>
