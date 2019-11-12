@@ -10,6 +10,7 @@ import Disqus from 'disqus-react';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {getReadTime} from '../utils/readTime';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SimpleShareButtons } from "react-simple-share";
 
 export const query = graphql`
   query($slug: String!) {
@@ -62,20 +63,29 @@ const Blog = (props) => {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     }
   }
+
+  const SocialBar = () => (
+    <SimpleShareButtons
+      whitelist={["Twitter", "LinkedIn", "Facebook"]}
+    />
+  );
   return (
     <>
       <Head title={props.data.contentfulBlogPost.title} />
-      <div style={{padding: '20px', textAlign: 'left'}}>
+      <div style={{padding: '50px', textAlign: 'left'}}>
         <div>
           <div>
             <h1>{props.data.contentfulBlogPost.title}</h1>
-              <p>
-                <FontAwesomeIcon icon="calendar" style={{marginRight: "10px"}}/>{props.data.contentfulBlogPost.publishedDate}
-                <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
-                <FontAwesomeIcon icon="clock" style={{marginRight: "10px"}}/>
-                {getReadTime(props.data.contentfulBlogPost.content.json)}
+            <p>
+              <FontAwesomeIcon icon="calendar" style={{marginRight: "10px"}}/>{props.data.contentfulBlogPost.publishedDate}
+              <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
+              <FontAwesomeIcon icon="clock" style={{marginRight: "10px"}}/>
+              {getReadTime(props.data.contentfulBlogPost.content.json)}
             </p>
             {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
+          </div>
+          <div class="icon-bar">
+            <SocialBar/>
           </div>
         </div>  
         { 
