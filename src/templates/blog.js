@@ -93,7 +93,7 @@ const Blog = (props) => {
             {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
           </div>
           <div class="icon-bar">	
-            <SocialBar url={props.location.href}/>	
+            <SocialBar url={window.location.href}/>	
           </div>
         </div>  
         { 
