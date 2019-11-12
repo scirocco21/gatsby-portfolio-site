@@ -27,7 +27,6 @@
         padding: 0;
 
         a.nav-item {
-          line-height: 2;
           color: #C0C0C0;
           text-decoration: none;
           li {
@@ -66,12 +65,15 @@
     div {
       .nav-list {
         a.nav-item {
+          font-size: 0;
           li {
             svg {
               opacity: 0;
+              visibility: hidden;
             }
             h4 {
               opacity: 0;
+              visibility: hidden;
             }
           }
         }
@@ -89,10 +91,15 @@
             svg {
               opacity: 1;
               transition: opacity 1.0s ;
+              visibility: visible;
+
+
             }
             h4 {
               opacity: 1;
               transition: opacity 1.0s ;
+              visibility: visible;
+
             }  
           }
         }
