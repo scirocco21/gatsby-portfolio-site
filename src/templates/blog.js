@@ -73,8 +73,8 @@ const Blog = (props) => {
     <>
       <Head title={props.data.contentfulBlogPost.title} />
       <div style={{padding: '50px', textAlign: 'left'}}>	
-        <div>
-          <div>
+        <div>    
+          <div>        
             <h1>{props.data.contentfulBlogPost.title}</h1>
               <p>
                 <FontAwesomeIcon icon="calendar" style={{marginRight: "10px"}}/>{props.data.contentfulBlogPost.publishedDate}
@@ -89,11 +89,11 @@ const Blog = (props) => {
                 <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
                 <FontAwesomeIcon icon="clock" style={{marginRight: "10px"}}/>
                 {getReadTime(getWords(props.data.contentfulBlogPost.content.json))}
-            </p>
+              </p>
             {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
           </div>
           <div class="icon-bar">	
-            <SocialBar/>	
+            <SocialBar url={window.location.href}/>	
           </div>
         </div>  
         { 
