@@ -8,9 +8,10 @@ import "../assets/monokai.css";
 import "../assets/sass/blog_post.scss";
 import Disqus from 'disqus-react';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
-import {getReadTime} from '../utils/readTime';
+import {getWords, getReadTime} from '../utils/readTime';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SimpleShareButtons } from "react-simple-share";	
+import { SimpleShareButtons } from "react-simple-share";
+
 
 export const query = graphql`
   query($slug: String!) {
@@ -78,8 +79,11 @@ const Blog = (props) => {
               <p>
                 <FontAwesomeIcon icon="calendar" style={{marginRight: "10px"}}/>{props.data.contentfulBlogPost.publishedDate}
                 <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
+                <FontAwesomeIcon icon="calculator" style={{marginRight: "10px"}}/>
+                {getWords(props.data.contentfulBlogPost.content.json).length}<span> words</span>
+                <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
                 <FontAwesomeIcon icon="clock" style={{marginRight: "10px"}}/>
-                {getReadTime(props.data.contentfulBlogPost.content.json)}
+                {getReadTime(getWords(props.data.contentfulBlogPost.content.json))}
             </p>
             {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
           </div>
