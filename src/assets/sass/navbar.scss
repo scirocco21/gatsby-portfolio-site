@@ -25,9 +25,7 @@
       .nav-list {
         list-style-type:none;
         padding: 0;
-
         a.nav-item {
-          line-height: 2;
           color: #C0C0C0;
           text-decoration: none;
           li {
@@ -66,6 +64,7 @@
     div {
       .nav-list {
         a.nav-item {
+          font-size: 0;
           li {
             svg {
               opacity: 0;
@@ -84,7 +83,8 @@
     transition: height 0.5s;
     div {
       ul.nav-list {
-        a.nav-item {          
+        a.nav-item {
+          font-size: 16px;          
           li {
             svg {
               opacity: 1;
