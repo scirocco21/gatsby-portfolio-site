@@ -10,7 +10,6 @@ import Disqus from 'disqus-react';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {getWords, getReadTime} from '../utils/readTime';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SimpleShareButtons } from "react-simple-share";
 import CountUp from 'react-countup';
 
 export const query = graphql`
@@ -64,11 +63,6 @@ const Blog = (props) => {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     }
   }
-  const SocialBar = () => (	
-    <SimpleShareButtons	
-      whitelist={["Twitter", "LinkedIn", "Facebook"]}	
-    />	
-  )
   return (
     <>
       <Head title={props.data.contentfulBlogPost.title} />
@@ -93,7 +87,7 @@ const Blog = (props) => {
             {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
           </div>
           <div class="icon-bar">	
-            <SocialBar url={props.location}/>	
+            
           </div>
         </div>  
         { 
