@@ -71,6 +71,10 @@ const Blog = (props) => {
   return (
     <>
       <Head title={props.data.contentfulBlogPost.title} />
+      <label class="switch">
+        <input type="checkbox"/>
+        <span class="slider round"></span>
+      </label>
       <div style={{padding: '50px', textAlign: 'left'}}>	
         <div>    
           <div>        
