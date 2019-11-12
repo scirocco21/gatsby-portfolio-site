@@ -1,3 +1,15 @@
+div.dark {
+  transition: all 2s ease;
+  color: white!important;
+  background-color: black;
+}
+div.light {
+  transition: all 2s ease;
+  color: black!important;
+  background-color: white;
+
+}
+
 pre {
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
@@ -58,7 +70,7 @@ $brand-colors: (
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: black;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -76,7 +88,7 @@ $brand-colors: (
 }
 
 input:checked + .slider {
-  background-color: black;
+  background-color: #ccc;
 }
 
 input:focus + .slider {
