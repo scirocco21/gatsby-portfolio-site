@@ -5,7 +5,6 @@ pre {
   word-wrap: break-word;
 }
 
-
 .icon-bar {
   position: fixed;
   top: 50%;
@@ -13,17 +12,25 @@ pre {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  margin-bottom: 45px;
 }
 
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 20px;
-}
+$brand-colors: (
+	facebook: #3b5998,
+	twitter: #1da1f2,
+	linkedin: #0077b5
+);
 
-.icon-bar a:hover {
-  transform: scale(1.5);
+@each $class, $color in $brand-colors {
+  .#{$class} {
+    background-color: $color;
+    border-color: $color;
+    color: #fff;
+    padding: 16px;
+    margin-bottom: 25px;
+    &:hover {
+      background-color:  #fff;
+      color: $color;
+    }
+  }
 }
