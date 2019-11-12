@@ -53,6 +53,7 @@
     "react-responsive-carousel": "^3.1.49",
     "react-reveal": "^1.2.2",
     "react-scroll-parallax": "^2.1.2",
+    "react-share": "^3.0.1",
     "react-stonecutter": "^0.3.10",
     "react-twitter-embed": "^3.0.3",
     "react-typography": "^0.16.19",
