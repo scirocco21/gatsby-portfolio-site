@@ -11,7 +11,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {getWords, getReadTime} from '../utils/readTime';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SimpleShareButtons } from "react-simple-share";
-
+import CountUp from 'react-countup';
 
 export const query = graphql`
   query($slug: String!) {
@@ -80,7 +80,12 @@ const Blog = (props) => {
                 <FontAwesomeIcon icon="calendar" style={{marginRight: "10px"}}/>{props.data.contentfulBlogPost.publishedDate}
                 <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
                 <FontAwesomeIcon icon="calculator" style={{marginRight: "10px"}}/>
-                {getWords(props.data.contentfulBlogPost.content.json).length}<span> words</span>
+                <CountUp 
+                  end={getWords(props.data.contentfulBlogPost.content.json).length}
+                  delay={0.3}
+                  duration={1.75}
+                  suffix={" words"}
+                />
                 <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
                 <FontAwesomeIcon icon="clock" style={{marginRight: "10px"}}/>
                 {getReadTime(getWords(props.data.contentfulBlogPost.content.json))}
