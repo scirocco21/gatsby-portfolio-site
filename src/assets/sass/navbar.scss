@@ -64,6 +64,7 @@
     div {
       .nav-list {
         a.nav-item {
+          visibility: hidden;
           font-size: 0;
           li {
             svg {
