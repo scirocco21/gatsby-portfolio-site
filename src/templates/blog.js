@@ -11,6 +11,11 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {getWords, getReadTime} from '../utils/readTime';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CountUp from 'react-countup';
+import {
+    FacebookShareButton,
+    LinkedinShareButton,
+    TwitterShareButton
+  } from 'react-share';
 
 export const query = graphql`
   query($slug: String!) {
@@ -86,8 +91,22 @@ const Blog = (props) => {
               </p>
             {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
           </div>
-          <div class="icon-bar">	
-            
+          <div className="icon-bar">	
+            <FacebookShareButton url={props.location.href} className="facebook">
+              <span className="icon">
+                <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+              </span>
+            </FacebookShareButton>
+            <LinkedinShareButton url={props.location.href} className="linkedin">
+              <span className="icon">
+                <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
+              </span>
+            </LinkedinShareButton>
+            <TwitterShareButton url={props.location.href} className="twitter">
+              <span className="icon">
+                <FontAwesomeIcon icon={['fab', 'twitter']} />
+              </span>
+            </TwitterShareButton>
           </div>
         </div>  
         { 
