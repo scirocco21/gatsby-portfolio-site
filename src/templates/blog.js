@@ -8,9 +8,7 @@ import "../assets/monokai.css";
 import "../assets/sass/blog_post.scss";
 import Disqus from 'disqus-react';
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
-import {getWords, getReadTime} from '../utils/readTime';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CountUp from 'react-countup';
+import InfoBar from '../components/InfoBar';
 import SocialBar from '../components/SocialBar';
 
 export const query = graphql`
@@ -77,20 +75,10 @@ const Blog = (props) => {
       <div className={activeClass} style={{padding: '50px', textAlign: 'left'}}>	
         <div>        
           <h1>{props.data.contentfulBlogPost.title}</h1>
-            <p>
-              <FontAwesomeIcon icon="calendar" style={{marginRight: "10px"}}/>{props.data.contentfulBlogPost.publishedDate}
-              <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
-              <FontAwesomeIcon icon="calculator" style={{marginRight: "10px"}}/>
-              <CountUp 
-                end={getWords(props.data.contentfulBlogPost.content.json).length}
-                delay={0.3}
-                duration={1.75}
-                suffix={" words"}
-              />
-              <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
-              <FontAwesomeIcon icon="clock" style={{marginRight: "10px"}}/>
-              {getReadTime(getWords(props.data.contentfulBlogPost.content.json))}
-            </p>
+            <InfoBar 
+              date={props.data.contentfulBlogPost.publishedDate}
+              content={props.data.contentfulBlogPost.content.json}
+            />
           {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
         </div>
           { 
