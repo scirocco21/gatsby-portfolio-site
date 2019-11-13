@@ -11,11 +11,7 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import {getWords, getReadTime} from '../utils/readTime';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CountUp from 'react-countup';
-import {
-    FacebookShareButton,
-    LinkedinShareButton,
-    TwitterShareButton
-  } from 'react-share';
+import SocialBar from '../components/SocialBar';
 
 export const query = graphql`
   query($slug: String!) {
@@ -73,48 +69,30 @@ const Blog = (props) => {
   return (
     <>
       <Head title={props.data.contentfulBlogPost.title} />
-        <label className="switch">
-          <input type="checkbox" onClick={() => toggleDarkMode(!darkModeOn)}/>
-          <span className="slider round"></span>
-        </label>
-        <div className={activeClass} style={{padding: '50px', textAlign: 'left'}}>	
-          <div>    
-            <div>        
-              <h1>{props.data.contentfulBlogPost.title}</h1>
-                <p>
-                  <FontAwesomeIcon icon="calendar" style={{marginRight: "10px"}}/>{props.data.contentfulBlogPost.publishedDate}
-                  <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
-                  <FontAwesomeIcon icon="calculator" style={{marginRight: "10px"}}/>
-                  <CountUp 
-                    end={getWords(props.data.contentfulBlogPost.content.json).length}
-                    delay={0.3}
-                    duration={1.75}
-                    suffix={" words"}
-                  />
-                  <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
-                  <FontAwesomeIcon icon="clock" style={{marginRight: "10px"}}/>
-                  {getReadTime(getWords(props.data.contentfulBlogPost.content.json))}
-                </p>
-              {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
-            </div>
-            <div className="icon-bar">	
-              <FacebookShareButton url={props.location.href} className="facebook">
-                <span className="icon">
-                  <FontAwesomeIcon icon={['fab', 'facebook-f']} />
-                </span>
-              </FacebookShareButton>
-              <LinkedinShareButton url={props.location.href} className="linkedin">
-                <span className="icon">
-                  <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
-                </span>
-              </LinkedinShareButton>
-              <TwitterShareButton url={props.location.href} className="twitter">
-                <span className="icon">
-                  <FontAwesomeIcon icon={['fab', 'twitter']} />
-                </span>
-              </TwitterShareButton>
-            </div>
-          </div>  
+      <label className="switch">
+        <input type="checkbox" onClick={() => toggleDarkMode(!darkModeOn)}/>
+        <span className="slider round"></span>
+      </label>
+      <SocialBar url={props.location.href}/>
+      <div className={activeClass} style={{padding: '50px', textAlign: 'left'}}>	
+        <div>        
+          <h1>{props.data.contentfulBlogPost.title}</h1>
+            <p>
+              <FontAwesomeIcon icon="calendar" style={{marginRight: "10px"}}/>{props.data.contentfulBlogPost.publishedDate}
+              <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
+              <FontAwesomeIcon icon="calculator" style={{marginRight: "10px"}}/>
+              <CountUp 
+                end={getWords(props.data.contentfulBlogPost.content.json).length}
+                delay={0.3}
+                duration={1.75}
+                suffix={" words"}
+              />
+              <span style={{marginRight: "15px", marginLeft: "15px"}}>/</span>
+              <FontAwesomeIcon icon="clock" style={{marginRight: "10px"}}/>
+              {getReadTime(getWords(props.data.contentfulBlogPost.content.json))}
+            </p>
+          {props.data.contentfulBlogPost.tldr.internal.content && <h4>TLDR: <em>{props.data.contentfulBlogPost.tldr.internal.content}</em></h4>}
+        </div>
           { 
             props.data.contentfulBlogPost.heroImage && 
             <Img 
@@ -122,9 +100,9 @@ const Blog = (props) => {
               style={{maxWidth: '70%', height: 'auto'}}
             />
           }
-          {documentToReactComponents(props.data.contentfulBlogPost.content.json, options)}
-          <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-        </div>
+        {documentToReactComponents(props.data.contentfulBlogPost.content.json, options)}
+        <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      </div>
     </>
   )
 }
