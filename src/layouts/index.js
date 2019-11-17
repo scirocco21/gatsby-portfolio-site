@@ -9,6 +9,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import Footer from './footer.js';
 import '../assets/fonts/BebasKai-Regular.otf'
+import Transition from '../components/Transition';
+
 
 library.add(fas, fab)
 
@@ -23,10 +25,12 @@ class Layout extends React.Component {
           <div style={{position: "absolute", height: "100%"}}>
             <Sidebar siteTitle={this.props.title}/>
           </div>
-          <div className="container">
-            <main style={{ flex: 1 }}>{this.props.children}</main>
-            { this.props.location.pathname !== "/" && <Footer /> } 
-          </div>
+          <Transition location={this.props.location}>
+            <div className="container">
+              <main style={{ flex: 1 }}>{this.props.children}</main>
+              { this.props.location.pathname !== "/" && <Footer /> } 
+            </div>
+          </Transition>
         </div>
       </>
       )
@@ -49,7 +53,9 @@ export default (props) => {
       }
     `}
       render={(data) => {
-        return <Layout title={data.site.siteMetadata.title} {...props}/>
+        return (
+          <Layout title={data.site.siteMetadata.title} {...props}/>
+        )
       }
     }
   />
