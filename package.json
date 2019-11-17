@@ -55,9 +55,9 @@
     "react-scroll-parallax": "^2.1.2",
     "react-share": "^3.0.1",
     "react-stonecutter": "^0.3.10",
+    "react-transition-group": "^4.3.0",
     "react-twitter-embed": "^3.0.3",
     "react-typography": "^0.16.19",
-    "react-use-dark-mode": "^2.0.1",
     "react-vertical-timeline-component": "^2.4.0",
     "styled-components": "^4.3.2"
   },
