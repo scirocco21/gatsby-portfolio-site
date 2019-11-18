@@ -61,7 +61,7 @@ class Contact extends React.Component {
                       <textarea  name="message" required="required" maxLength="2000" cols="6" rows="9" placeholder="Your message goes here..."></textarea>
                       <br></br>
                       
-                        <button style={{position: 'relative', marginTop: '17px', padding: '20px', borderRadius: '50%', backgroundColor: 'rgba(225, 225, 225, 0)', border: '4px solid black',boxShadow: "0px 0px 1px 2px rgba(0,0,0,0.75)"}} type="submit" value="Submit">
+                      <button className="send-button" type="submit" value="Submit">
                         <FontAwesomeIcon icon="envelope" style={{ fontSize: '40px'}}>
                         </FontAwesomeIcon>
                       </button>
