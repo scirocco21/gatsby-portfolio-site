@@ -106,3 +106,14 @@ body {
     bottom: -100px;
   }
 }
+
+.dark {
+  transition: all 2s ease;
+  color: white!important;
+  background-color: black;
+}
+.light {
+  transition: all 2s ease;
+  color: black!important;
+  background-color: white;
+}
