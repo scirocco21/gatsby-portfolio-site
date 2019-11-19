@@ -1,5 +1,5 @@
 section#resume {
-  background-color: #f9f9f9;
+  background-color: inherit;
   padding-top: 20px;
 }
 ul#skill-icons {
@@ -10,20 +10,33 @@ ul#skill-icons {
   padding: 0;
   li {
     margin: 1rem;
+    svg:hover {
+      transform: rotate(360deg);
+      transition-duration: 1.5s;
+    
+    }
   }
 } 
+
+svg.white {
+  fill:white;
+}
+svg.black{
+  fill:black
+}
+.white {
+  color: white;
+}
+.black {
+  color: black;
+}
+
 div#personal {
+  display: flex;
+  justify-content: center;
   p {
     font-size: 1.5rem;
   }
-}
-img#selfie {
-  height: 8rem;
-  width: 8rem;
-  border-radius: 15px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  margin-right: 1rem;
 }
 .subheading-resume {
   font-size: 1.5rem;
@@ -36,10 +49,4 @@ img#selfie {
 }
 .vertical-timeline {
   margin-bottom: 0!important;
-}
-.education-path {
-  fill: white;
-}
-.work-path {
-  fill: white;
 }
