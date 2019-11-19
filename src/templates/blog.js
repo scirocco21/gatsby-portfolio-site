@@ -67,12 +67,8 @@ const Blog = (props) => {
   return (
     <>
       <Head title={props.data.contentfulBlogPost.title} />
-      <label className="switch">
-        <input type="checkbox" onClick={() => toggleDarkMode(!darkModeOn)}/>
-        <span className="slider round"></span>
-      </label>
       <SocialBar url={props.location.href}/>
-      <div className={activeClass} style={{padding: '50px', textAlign: 'left'}}>	
+      <div style={{padding: '50px', textAlign: 'left'}}>	
         <div>        
           <h1>{props.data.contentfulBlogPost.title}</h1>
             <InfoBar 
