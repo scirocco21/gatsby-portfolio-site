@@ -38,7 +38,6 @@ aside {
   z-index: 2;
   border-right: 2px solid white;
 
-
   header {
     flex: 2;
     img {
@@ -48,7 +47,6 @@ aside {
   }
   nav {
     flex: 1;
-    // padding: 20px;
     .nav-list {
       list-style-type: none;
       padding:0;
@@ -57,11 +55,12 @@ aside {
       .menu-button {
         visibility: hidden;
       }
-      .nav-item {
-       
+      a.nav-item {
         line-height: 2;
         color: #C0C0C0;
         text-decoration: none;
+        display: block;
+        position: relative;  
         li {
           margin-bottom: 20px;
           align-items: center;
@@ -76,9 +75,22 @@ aside {
           }
         }
       }
-      .nav-item:hover {
-        color: $red;
+      a.nav-item:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: $red;
+        transition: width 0.5s ease 0s, left 0.5s ease 0s;
+        width: 0;
       }
+      a.nav-item:hover:after { 
+        width: 100%; 
+        left: 0; 
+      }      
     }
   }
 }
