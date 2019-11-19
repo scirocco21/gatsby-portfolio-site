@@ -22,7 +22,7 @@ aside:hover {
 
 aside {
   flex: 2;
-  transition: width 1s;
+  transition: width 0.6s ease;
   width: 120px;
   min-height: 100vh;
   max-height: 100vh;
@@ -36,6 +36,8 @@ aside {
   background-color: #010203;
   min-height: 100vh;
   z-index: 2;
+  border-right: 2px solid white;
+
 
   header {
     flex: 2;
@@ -70,7 +72,7 @@ aside {
             font-family: 'bebas-kai';
             font-size: 0px;
             opacity: 0;
-            transition: opacity 0.7s;
+            transition: opacity 1s ease;
           }
         }
       }
