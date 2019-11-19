@@ -3,7 +3,7 @@ import { TransitionGroup, Transition as ReactTransition } from 'react-transition
 
 // The duration for each phase of the transition
 // So the total duration will be _twice_ this
-const timeout = 150;
+const timeout = 250;
 
 const styles = {
   entering: {
