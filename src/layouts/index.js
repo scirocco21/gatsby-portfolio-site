@@ -32,7 +32,6 @@ class Layout extends React.Component {
     return(
       <>
         <div id="main-container" style={{position: "relative"}}>
-        
 
           <div style={{position: "absolute", width: "100%", height: "100%"}}>
             <NavBar siteTitle={this.props.title}/>
@@ -42,12 +41,11 @@ class Layout extends React.Component {
           </div>
 
           <Transition location={this.props.location}>
-          
             <div className="container">
               <main style={{ flex: 1 }} className={activeClass}>
                 {this.props.location.pathname !== "/" 
                 && this.props.location.pathname !== "/contact"
-                && <DarkModeToggler toggleDarkMode={this.toggleDarkMode}/>}
+                && <DarkModeToggler toggleDarkMode={this.toggleDarkMode} darkModeOn={this.state.darkModeOn}/>}
                 {React.cloneElement(this.props.children, { darkModeOn: this.state.darkModeOn })}
               </main>
               { this.props.location.pathname !== "/" && <Footer /> } 
