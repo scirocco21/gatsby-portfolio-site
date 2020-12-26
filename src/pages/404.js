@@ -10,7 +10,7 @@ const Iframe = (props) => (
       height={props.height} 
       width={props.width} 
       frameborder={props.frameborder}
-      title="Astronaut walking on sand"
+      title="Astronaut floating through space"
     />
   </div>
 )
@@ -20,8 +20,10 @@ const NotFoundPage = () => (
     <Head title="404: Not found" />
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      <Iframe src="https://giphy.com/embed/GK2zBA4xXqIPS" height="250px" width="250px" frameborder="0"></Iframe>
-    <p><a href="https://giphy.com/gifs/loop-space-lost-GK2zBA4xXqIPS">via GIPHY</a></p>
+    <iframe src="https://giphy.com/embed/3o7btZ3T6y3JTmjg4w" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <p>
+      <a href="https://giphy.com/gifs/epitaphrecords-music-video-3o7btZ3T6y3JTmjg4w">via GIPHY</a>
+    </p>
   </>
 )
 
