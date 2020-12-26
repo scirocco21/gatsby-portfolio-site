@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { config } from '@fortawesome/fontawesome-svg-core'
 import pageConfig from '../config.js'
-import logo from '../images/logo.svg'
 
 config.autoAddCss = false
 
@@ -23,7 +22,6 @@ export default class Sidebar extends React.Component {
             <FontAwesomeIcon 
               icon={page.icon}
             />
-
             <h4>{page.title}</h4>            
           </li>
         </Link>    
@@ -31,15 +29,7 @@ export default class Sidebar extends React.Component {
     })
     return(
       <aside>
-        <header>
-          <Link to="/">
-            <img 
-              src={logo} 
-              alt="Sebastian Gertz Logo"
-            />
-          </Link>
-        </header>
-        <nav style={{flex: 5}}>
+        <nav style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
           <ul className="nav-list">
             {pagesList}
           </ul>
