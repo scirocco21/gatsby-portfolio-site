@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import MenuButton from './menuButton.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import config from '../config.js'
-import logo from '../images/logo.svg';
 import '../assets/sass/navbar.scss'
 
 export default class NavBar extends React.Component {
@@ -52,8 +51,6 @@ export default class NavBar extends React.Component {
         {/* <header>
           <Link to="/">
             <img 
-              src={logo} 
-              alt="Sebastian Gertz Logo"
             /> */}
           {/* </Link> */}
         {/* </header> */}
