@@ -49,15 +49,15 @@ export default class NavBar extends React.Component {
     })
     return(
       <nav className={expandedClass}>
-        <header>
+        {/* <header>
           <Link to="/">
             <img 
               src={logo} 
               alt="Sebastian Gertz Logo"
-            />
-          </Link>
-        </header>
-        <div style={{flex: 5}}>
+            /> */}
+          {/* </Link> */}
+        {/* </header> */}
+        <div>
           <ul className="nav-list">
             {pagesList}
           <li>
