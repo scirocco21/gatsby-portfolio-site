@@ -319,4 +319,4 @@ export default class Chromata {
     }
 }
 
-window.Chromata = Chromata;
+// window.Chromata = Chromata;
