@@ -9,24 +9,23 @@
   flex-direction: column; 
   align-items: center;
   flex: 1;
+  padding: 40px;
   max-width: 75%;
-  width: 8rem;
   border-radius: 2.5%;
-  div {
-    ul.icons {
-      li {
-        padding: 0;
-        margin: 0;
-        svg {
-          color:#3A2A46;
-          margin-right: 10px;
-          margin-left: 10px;         
-          padding: 0;
-        }
-        svg:hover {
-          color: #ED5F7B;
-        }
-      }
+}
+
+ul.icons {
+  li {
+    padding: 0;
+    margin: 0;
+    svg {
+      color: black;
+      margin-right: 10px;
+      margin-left: 10px;         
+      padding: 0;
+    }
+    svg:hover {
+      color: #ED5F7B;
     }
   }
 }
@@ -37,15 +36,8 @@
   }
 }
 
-#text-container-main {
-  font-size: 1rem;
-  padding: 20px;
-  font-family: $secondary;
-  
-}
-
 #intro-text-main {
-  font-size: 1.25rem;
+  font-size: 3rem;
 }
 
 .scale-in-center {
@@ -77,8 +69,8 @@
 }
 @keyframes scale-in-center {
   0% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
+    -webkit-transform: scale(0.65);
+            transform: scale(0.65);
     opacity: 1;
   }
   100% {
