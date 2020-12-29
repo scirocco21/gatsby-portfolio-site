@@ -11,8 +11,8 @@ export default class Home extends React.Component {
     const image = document.querySelector('img')
       const chromata = new Chromata(image, {
         colorMode: "color",
-        pathFinderCount: 240,
-        speed: 1060,
+        pathFinderCount: 120,
+        speed: 240,
         turningAngle: Math.PI/2,
         key: "low",
         lineMode: "point",
@@ -52,7 +52,7 @@ export default class Home extends React.Component {
               {socialLinksMarkup}
           </ul>
         </div>
-        <img style={styles} src={require("../images/dhruvansh-soni-Mo7RooYGXi4-unsplash.jpg")}/>
+        <img style={styles} src={require("../images/imgonline-com-ua-CompressToSize-QbEWceeSsklP.jpg")}/>
       </div>
     </>
     )
